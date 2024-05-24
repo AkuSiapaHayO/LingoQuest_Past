@@ -15,6 +15,7 @@
 		044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72DB2C0035F000FDF683 /* ContentView.swift */; };
 		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
 		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
+		04DD3CE82C003F230007C583 /* CrosswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD3CE72C003F230007C583 /* CrosswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		044B72DD2C0035F200FDF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044B72E02C0035F200FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoQuest_Mac.entitlements; sourceTree = "<group>"; };
+		04DD3CE72C003F230007C583 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 		044B72C42C0033DE00FDF683 /* LingoQuest */ = {
 			isa = PBXGroup;
 			children = (
+				04DD3CE62C003F060007C583 /* Crossword */,
 				044B72C52C0033DE00FDF683 /* LingoQuestApp.swift */,
 				044B72C72C0033DE00FDF683 /* ContentView.swift */,
 				044B72C92C0033E100FDF683 /* Assets.xcassets */,
@@ -104,6 +107,14 @@
 				044B72E02C0035F200FDF683 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04DD3CE62C003F060007C583 /* Crossword */ = {
+			isa = PBXGroup;
+			children = (
+				04DD3CE72C003F230007C583 /* CrosswordView.swift */,
+			);
+			path = Crossword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 			files = (
 				044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
+				04DD3CE82C003F230007C583 /* CrosswordView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,7 +427,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Kel.LoMar.LingoQuest-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,7 +454,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Kel.LoMar.LingoQuest-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
