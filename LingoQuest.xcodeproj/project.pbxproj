@@ -11,6 +11,10 @@
 		044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72C72C0033DE00FDF683 /* ContentView.swift */; };
 		044B72CA2C0033E100FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72C92C0033E100FDF683 /* Assets.xcassets */; };
 		044B72CD2C0033E100FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72CC2C0033E100FDF683 /* Preview Assets.xcassets */; };
+		044B72DA2C0035F000FDF683 /* LingoQuest_MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */; };
+		044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72DB2C0035F000FDF683 /* ContentView.swift */; };
+		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
+		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,10 +23,23 @@
 		044B72C72C0033DE00FDF683 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		044B72C92C0033E100FDF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044B72CC2C0033E100FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		044B72D72C0035F000FDF683 /* LingoQuest_Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoQuest_Mac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoQuest_MacApp.swift; sourceTree = "<group>"; };
+		044B72DB2C0035F000FDF683 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		044B72DD2C0035F200FDF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		044B72E02C0035F200FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoQuest_Mac.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		044B72BF2C0033DE00FDF683 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044B72D42C0035F000FDF683 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				044B72C42C0033DE00FDF683 /* LingoQuest */,
+				044B72D82C0035F000FDF683 /* LingoQuest_Mac */,
 				044B72C32C0033DE00FDF683 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				044B72C22C0033DE00FDF683 /* LingoQuest.app */,
+				044B72D72C0035F000FDF683 /* LingoQuest_Mac.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,6 +82,26 @@
 			isa = PBXGroup;
 			children = (
 				044B72CC2C0033E100FDF683 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		044B72D82C0035F000FDF683 /* LingoQuest_Mac */ = {
+			isa = PBXGroup;
+			children = (
+				044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */,
+				044B72DB2C0035F000FDF683 /* ContentView.swift */,
+				044B72DD2C0035F200FDF683 /* Assets.xcassets */,
+				044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */,
+				044B72DF2C0035F200FDF683 /* Preview Content */,
+			);
+			path = LingoQuest_Mac;
+			sourceTree = "<group>";
+		};
+		044B72DF2C0035F200FDF683 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				044B72E02C0035F200FDF683 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -87,6 +126,23 @@
 			productReference = 044B72C22C0033DE00FDF683 /* LingoQuest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		044B72D62C0035F000FDF683 /* LingoQuest_Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 044B72E52C0035F200FDF683 /* Build configuration list for PBXNativeTarget "LingoQuest_Mac" */;
+			buildPhases = (
+				044B72D32C0035F000FDF683 /* Sources */,
+				044B72D42C0035F000FDF683 /* Frameworks */,
+				044B72D52C0035F000FDF683 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LingoQuest_Mac;
+			productName = LingoQuest_Mac;
+			productReference = 044B72D72C0035F000FDF683 /* LingoQuest_Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -98,6 +154,9 @@
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					044B72C12C0033DE00FDF683 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					044B72D62C0035F000FDF683 = {
 						CreatedOnToolsVersion = 15.4;
 					};
 				};
@@ -116,6 +175,7 @@
 			projectRoot = "";
 			targets = (
 				044B72C12C0033DE00FDF683 /* LingoQuest */,
+				044B72D62C0035F000FDF683 /* LingoQuest_Mac */,
 			);
 		};
 /* End PBXProject section */
@@ -130,6 +190,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		044B72D52C0035F000FDF683 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */,
+				044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -139,6 +208,15 @@
 			files = (
 				044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		044B72D32C0035F000FDF683 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */,
+				044B72DA2C0035F000FDF683 /* LingoQuest_MacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +398,60 @@
 			};
 			name = Release;
 		};
+		044B72E32C0035F200FDF683 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LingoQuest_Mac/LingoQuest_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LingoQuest_Mac/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kel.LoMar.LingoQuest-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		044B72E42C0035F200FDF683 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LingoQuest_Mac/LingoQuest_Mac.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LingoQuest_Mac/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Kel.LoMar.LingoQuest-Mac";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +469,15 @@
 			buildConfigurations = (
 				044B72D12C0033E100FDF683 /* Debug */,
 				044B72D22C0033E100FDF683 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		044B72E52C0035F200FDF683 /* Build configuration list for PBXNativeTarget "LingoQuest_Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				044B72E32C0035F200FDF683 /* Debug */,
+				044B72E42C0035F200FDF683 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
