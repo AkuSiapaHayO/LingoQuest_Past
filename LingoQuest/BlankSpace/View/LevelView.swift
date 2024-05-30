@@ -1,52 +1,37 @@
-//
-//  LevelView.swift
-//  LingoQuest
-//
-//  Created by MacBook Pro on 29/05/24.
-//
-
 import SwiftUI
 
 struct LevelView: View {
-    @ObservedObject var viewModel = LevelViewModel()
+    @ObservedObject var viewModel: LevelViewModel
 
     var body: some View {
-        VStack {
-            Text("Levels")
-                .font(.largeTitle)
-                .padding()
-
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3)) {
-                ForEach(viewModel.levels) { level in
-                    LevelButton(level: level, action: {
-                        if level.isUnlocked {
-                            // Navigate to BlankSpaceView with the selected level
+        NavigationView {
+            VStack {
+                ForEach(0..<3) { row in
+                    HStack {
+                        ForEach(0..<5) { column in
+                            let level = row * 5 + column + 1
+                            NavigationLink(destination: BlankSpaceView(viewModel: BlankSpaceViewModel(level: level))) {
+                                Text("\(level)")
+                                    .frame(width: 60, height: 60)
+                                    .background(viewModel.isUnlocked(level: level) ? Color.blue : Color.gray)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(8)
+                            }
+                            .disabled(!viewModel.isUnlocked(level: level))
                         }
-                    })
+                    }
                 }
+            }
+            .padding()
+            .onAppear {
+                viewModel.loadLevels()
             }
         }
     }
 }
 
-struct LevelButton: View {
-    var level: LevelModel
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text("Level \(level.id)")
-                .padding()
-                .frame(width: 100, height: 100)
-                .background(level.isUnlocked ? Color.green : Color.gray)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-        }
-        .disabled(!level.isUnlocked)
+struct LevelView_Previews: PreviewProvider {
+    static var previews: some View {
+        LevelView(viewModel: LevelViewModel())
     }
-}
-
-
-#Preview {
-    LevelView()
 }

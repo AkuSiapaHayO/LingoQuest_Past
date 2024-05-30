@@ -1,15 +1,9 @@
-//
-//  BlankSpaceModel.swift
-//  LingoQuest
-//
-//  Created by MacBook Pro on 29/05/24.
-//
-
 import Foundation
 
-struct BlankSpaceModel: Identifiable, Decodable {
-    var id: Int
-    var paragraph: String
-    var correctWords: [String]
-    var choices: [String]
+struct LevelData: Codable {
+    let id: Int
+    let paragraph: String
+    let correctAnswer: [String]
+    let choices: [String]
+    var isUnlocked: Bool
 }

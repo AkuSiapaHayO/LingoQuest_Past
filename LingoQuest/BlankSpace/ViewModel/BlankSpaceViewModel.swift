@@ -1,56 +1,43 @@
-//
-//  BlankSpaceViewModel.swift
-//  LingoQuest
-//
-//  Created by MacBook Pro on 29/05/24.
-//
-
-import Foundation
+import SwiftUI
 
 class BlankSpaceViewModel: ObservableObject {
     @Published var currentLevel: Int
-    @Published var currentQuestion: BlankSpaceModel?
-    @Published var selectedWords: [String] = []
+    @Published var paragraph: String = ""
+    @Published var choices: [String] = []
 
-    private var questions: [BlankSpaceModel] = []
+    private var correctAnswers: [String] = []
+    private var levelsData: [LevelData] = []
 
     init(level: Int) {
         self.currentLevel = level
-        loadQuestions()
-        loadCurrentQuestion()
+        loadLevelData()
+        loadLevel()
     }
 
-    func loadQuestions() {
-        if let url = Bundle.main.url(forResource: "Questions", withExtension: "json"),
-           let data = try? Data(contentsOf: url),
-           let decodedQuestions = try? JSONDecoder().decode([BlankSpaceModel].self, from: data) {
-            questions = decodedQuestions
-        }
+    func loadLevel() {
+        guard let levelData = levelsData.first(where: { $0.id == currentLevel }) else { return }
+        paragraph = levelData.paragraph
+        choices = levelData.choices.shuffled()
+        correctAnswers = levelData.correctAnswer
     }
 
-    func loadCurrentQuestion() {
-        currentQuestion = questions.first { $0.id == currentLevel }
-    }
-
-    func checkAnswer() -> Bool {
-        guard let question = currentQuestion else { return false }
-        return Set(selectedWords) == Set(question.correctWords)
-    }
-
-    func toggleSelection(of word: String) {
-        if selectedWords.contains(word) {
-            selectedWords.removeAll { $0 == word }
-        } else {
-            selectedWords.append(word)
-        }
+    func checkAnswer(selectedWords: [String]) -> Bool {
+        return selectedWords.sorted() == correctAnswers.sorted()
     }
 
     func completeLevel() {
-        // Unlock the next level
-        if let nextLevel = currentLevel < 15 ? currentLevel + 1 : nil {
-            // Logic to unlock next level in LevelViewModel
-            LevelViewModel().unlockNextLevel(currentLevel: currentLevel)
+        // Logic to mark the level as complete and unlock the next level
+    }
+
+    private func loadLevelData() {
+        if let url = Bundle.main.url(forResource: "levels", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                let decoder = JSONDecoder()
+                levelsData = try decoder.decode([LevelData].self, from: data)
+            } catch {
+                print("Failed to load level data: \(error)")
+            }
         }
     }
 }
-

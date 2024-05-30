@@ -1,14 +1,8 @@
-//
-//  BlankSpaceUI.swift
-//  LingoQuest
-//
-//  Created by MacBook Pro on 29/05/24.
-//
-
 import SwiftUI
 
 struct BlankSpaceView: View {
     @ObservedObject var viewModel: BlankSpaceViewModel
+    @State private var selectedWords: [String] = []
 
     var body: some View {
         VStack {
@@ -16,55 +10,51 @@ struct BlankSpaceView: View {
                 .font(.largeTitle)
                 .padding()
 
-            if let question = viewModel.currentQuestion {
-                Text(question.paragraph)
-                    .padding()
-
-                ForEach(question.choices, id: \.self) { word in
-                    WordButton(word: word, isSelected: viewModel.selectedWords.contains(word)) {
-                        viewModel.toggleSelection(of: word)
-                    }
-                }
-
-                Button(action: {
-                    if viewModel.checkAnswer() {
-                        viewModel.completeLevel()
-                        // Show level completed popup and unlock next level
-                    } else {
-                        // Show try again popup
-                    }
-                }) {
-                    Text("Answer")
-                        .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
-                        .cornerRadius(10)
-                }
+            Text(viewModel.paragraph)
                 .padding()
+
+            VStack {
+                ForEach(viewModel.choices, id: \.self) { word in
+                    Button(action: {
+                        if selectedWords.contains(word) {
+                            selectedWords.removeAll { $0 == word }
+                        } else {
+                            selectedWords.append(word)
+                        }
+                    }) {
+                        Text(word)
+                            .padding()
+                            .background(selectedWords.contains(word) ? Color.blue : Color.gray)
+                            .cornerRadius(8)
+                            .foregroundColor(.white)
+                    }
+                }
             }
+            .padding()
+
+            Button(action: {
+                if viewModel.checkAnswer(selectedWords: selectedWords) {
+                    viewModel.completeLevel()
+                } else {
+                    selectedWords.removeAll()
+                }
+            }) {
+                Text("Answer")
+                    .padding()
+                    .background(Color.green)
+                    .cornerRadius(8)
+                    .foregroundColor(.white)
+            }
+            .padding()
+        }
+        .onAppear {
+            viewModel.loadLevel()
         }
     }
 }
 
-struct WordButton: View {
-    var word: String
-    var isSelected: Bool
-    var action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            Text(word)
-                .padding()
-                .background(isSelected ? Color.blue : Color.gray)
-                .foregroundColor(.white)
-                .cornerRadius(10)
-        }
-        .padding(4)
+struct BlankSpaceView_Previews: PreviewProvider {
+    static var previews: some View {
+        BlankSpaceView(viewModel: BlankSpaceViewModel(level: 1))
     }
 }
-
-
-
-//#Preview {
-//    BlankSpaceView(viewModel: <#T##BlankSpaceViewModel#>)
-//}

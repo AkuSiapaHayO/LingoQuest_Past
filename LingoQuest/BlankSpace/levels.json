@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "paragraph": "The quick brown ____ jumps over the lazy ____.",
+        "correctAnswer": ["fox", "dog"],
+        "choices": ["fox", "dog", "cat", "camel", "lion"],
+        "isUnlocked": true
+    },
+    {
+        "id": 2,
+        "paragraph": "A journey of a thousand miles begins with a single ____.",
+        "correctAnswer": ["step"],
+        "choices": ["step", "run", "jump"],
+        "isUnlocked": false
+    },
+]
+

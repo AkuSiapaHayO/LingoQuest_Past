@@ -16,12 +16,11 @@
 		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
 		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
 		044B72E92C074E2500FDF683 /* BlankSpaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72E82C074E2500FDF683 /* BlankSpaceView.swift */; };
-		044B72EB2C07500700FDF683 /* Question.json in Resources */ = {isa = PBXBuildFile; fileRef = 044B72EA2C07500700FDF683 /* Question.json */; };
+		044B72EB2C07500700FDF683 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 044B72EA2C07500700FDF683 /* levels.json */; };
 		044B72ED2C07504400FDF683 /* BlankSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72EC2C07504400FDF683 /* BlankSpaceViewModel.swift */; };
 		044B72EF2C07505800FDF683 /* BlankSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72EE2C07505800FDF683 /* BlankSpaceModel.swift */; };
 		044B72F42C075A1200FDF683 /* LevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72F32C075A1200FDF683 /* LevelView.swift */; };
 		044B72F62C075A2B00FDF683 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72F52C075A2B00FDF683 /* LevelViewModel.swift */; };
-		044B72F82C075A3A00FDF683 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72F72C075A3A00FDF683 /* LevelModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,12 +36,11 @@
 		044B72E02C0035F200FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoQuest_Mac.entitlements; sourceTree = "<group>"; };
 		044B72E82C074E2500FDF683 /* BlankSpaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankSpaceView.swift; sourceTree = "<group>"; };
-		044B72EA2C07500700FDF683 /* Question.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Question.json; sourceTree = "<group>"; };
+		044B72EA2C07500700FDF683 /* levels.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = levels.json; sourceTree = "<group>"; };
 		044B72EC2C07504400FDF683 /* BlankSpaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankSpaceViewModel.swift; sourceTree = "<group>"; };
 		044B72EE2C07505800FDF683 /* BlankSpaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankSpaceModel.swift; sourceTree = "<group>"; };
 		044B72F32C075A1200FDF683 /* LevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelView.swift; sourceTree = "<group>"; };
 		044B72F52C075A2B00FDF683 /* LevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewModel.swift; sourceTree = "<group>"; };
-		044B72F72C075A3A00FDF683 /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +125,7 @@
 				044B72F22C0759F100FDF683 /* View */,
 				044B72F12C0759E600FDF683 /* ViewModel */,
 				044B72F02C0759DF00FDF683 /* Model */,
-				044B72EA2C07500700FDF683 /* Question.json */,
+				044B72EA2C07500700FDF683 /* levels.json */,
 			);
 			path = BlankSpace;
 			sourceTree = "<group>";
@@ -136,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				044B72EE2C07505800FDF683 /* BlankSpaceModel.swift */,
-				044B72F72C075A3A00FDF683 /* LevelModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				044B72EB2C07500700FDF683 /* Question.json in Resources */,
+				044B72EB2C07500700FDF683 /* levels.json in Resources */,
 				044B72CD2C0033E100FDF683 /* Preview Assets.xcassets in Resources */,
 				044B72CA2C0033E100FDF683 /* Assets.xcassets in Resources */,
 			);
@@ -264,7 +261,6 @@
 				044B72F42C075A1200FDF683 /* LevelView.swift in Sources */,
 				044B72EF2C07505800FDF683 /* BlankSpaceModel.swift in Sources */,
 				044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */,
-				044B72F82C075A3A00FDF683 /* LevelModel.swift in Sources */,
 				044B72F62C075A2B00FDF683 /* LevelViewModel.swift in Sources */,
 				044B72E92C074E2500FDF683 /* BlankSpaceView.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
