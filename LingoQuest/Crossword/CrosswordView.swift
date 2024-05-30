@@ -7,43 +7,20 @@
 
 import SwiftUI
 
-struct CrosswordCell: Identifiable {
-    let id: Int
-    var letter: String = ""
-    var isEditable: Bool
-}
+class CrosswordViewModel: ObservableObject {
+    @Published var crosswordGrid: [[CrosswordCell]]
+    @Published var selectedCell: CrosswordCell?
+    @Published var showingAlert: Bool = false
 
-struct CrosswordView: View {
-    @State private var crosswordGrid: [[CrosswordCell]] = [
-        [CrosswordCell(id: 0, letter: "", isEditable: true), CrosswordCell(id: 1, letter: "", isEditable: true), CrosswordCell(id: 2, letter: "", isEditable: true)],
-        [CrosswordCell(id: 3, letter: "", isEditable: true), CrosswordCell(id: 4, letter: "", isEditable: false), CrosswordCell(id: 5, letter: "", isEditable: false)],
-        [CrosswordCell(id: 6, letter: "", isEditable: true), CrosswordCell(id: 7, letter: "", isEditable: false), CrosswordCell(id: 8, letter: "", isEditable: false)]
-    ]
-    
-    @State private var selectedCell: CrosswordCell? = nil
-    @State private var showingAlert = false
-    
-    var body: some View {
-        VStack(spacing: 0) {
-            ForEach(crosswordGrid.indices, id: \.self) { rowIndex in
-                HStack(spacing: 0) {
-                    ForEach(self.crosswordGrid[rowIndex].indices, id: \.self) { colIndex in
-                        CellView(cell: self.$crosswordGrid[rowIndex][colIndex],
-                                 isSelected: self.selectedCell?.id == self.crosswordGrid[rowIndex][colIndex].id,
-                                 onTap: {
-                                    self.selectedCell = self.crosswordGrid[rowIndex][colIndex]
-                                 }, onCommit: checkForWin)
-                    }
-                }
-            }
-        }
-        .padding()
-        .alert(isPresented: $showingAlert) {
-            Alert(title: Text("Congratulations!"), message: Text("You completed the crossword!"), dismissButton: .default(Text("OK")))
-        }
+    init() {
+        self.crosswordGrid = [
+            [CrosswordCell(id: 0, isEditable: true), CrosswordCell(id: 1, isEditable: true), CrosswordCell(id: 2, isEditable: true)],
+            [CrosswordCell(id: 3, isEditable: true), CrosswordCell(id: 4, isEditable: false), CrosswordCell(id: 5, isEditable: false)],
+            [CrosswordCell(id: 6, isEditable: true), CrosswordCell(id: 7, isEditable: false), CrosswordCell(id: 8, isEditable: false)]
+        ]
     }
-    
-    private func checkForWin() {
+
+    func checkForWin() {
         let correctAnswers = [
             ["C", "A", "T"],
             ["A", "", ""],
@@ -65,115 +42,29 @@ struct CrosswordView: View {
     }
 }
 
-struct CellView: View {
-    @Binding var cell: CrosswordCell
-    var isSelected: Bool
-    var onTap: () -> Void
-    var onCommit: () -> Void
-    
-    @State private var isEditing = false
-    @FocusState private var isFocused: Bool
-    
+struct CrosswordView: View {
+    @StateObject private var viewModel = CrosswordViewModel()
+
     var body: some View {
-        GeometryReader { geometry in
-            ZStack {
-                Rectangle()
-                    .fill(self.isSelected ? Color.blue : Color.white)
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .border(Color.black, width: 1)
-                
-                if self.cell.isEditable {
-                    CustomTextField(text: self.$cell.letter, isEditing: self.$isEditing, onCommit: {
-                        self.onCommit()
-                    })
-                    .multilineTextAlignment(.center)
-                    .font(Font.system(size: 20))
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .background(Color.white)
-                    .border(Color.black, width: 1)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .focused($isFocused)
-                    .onTapGesture {
-                        self.isFocused = true
-                        self.onTap()
+        VStack(spacing: 0) {
+            ForEach(viewModel.crosswordGrid.indices, id: \.self) { rowIndex in
+                HStack(spacing: 0) {
+                    ForEach(viewModel.crosswordGrid[rowIndex].indices, id: \.self) { colIndex in
+                        CellView(cell: viewModel.crosswordGrid[rowIndex][colIndex],
+                                 isSelected: viewModel.selectedCell?.id == viewModel.crosswordGrid[rowIndex][colIndex].id,
+                                 onTap: {
+                                    viewModel.selectedCell = viewModel.crosswordGrid[rowIndex][colIndex]
+                                 }, onCommit: {
+                                    viewModel.checkForWin()
+                                 })
                     }
-                } else {
-                    Text(self.cell.letter)
-                        .font(Font.system(size: 20))
-                        .frame(width: geometry.size.width, height: geometry.size.height)
-                        .background(Color.white)
                 }
             }
-            .onTapGesture {
-                self.isFocused = true
-                self.onTap()
-            }
+        }
+        .padding()
+        .alert(isPresented: $viewModel.showingAlert) {
+            Alert(title: Text("Congratulations!"), message: Text("You completed the crossword!"), dismissButton: .default(Text("OK")))
         }
     }
 }
 
-struct CustomTextField: UIViewRepresentable {
-    class Coordinator: NSObject, UITextFieldDelegate {
-        var parent: CustomTextField
-
-        init(parent: CustomTextField) {
-            self.parent = parent
-        }
-
-        func textFieldDidEndEditing(_ textField: UITextField) {
-            self.parent.isEditing = false
-            self.parent.onCommit()
-        }
-        
-        func textFieldDidBeginEditing(_ textField: UITextField) {
-            self.parent.isEditing = true
-        }
-        
-        @objc func textFieldDidChange(_ textField: UITextField) {
-            if let text = textField.text {
-                // Limit the text to a single character
-                if text.count > 1 {
-                    textField.text = String(text.prefix(1))
-                }
-                self.parent.text = textField.text ?? ""
-            }
-        }
-    }
-
-    @Binding var text: String
-    @Binding var isEditing: Bool
-    var onCommit: () -> Void
-
-    func makeUIView(context: Context) -> UITextField {
-        let textField = UITextField(frame: .zero)
-        textField.delegate = context.coordinator
-        textField.addTarget(context.coordinator, action: #selector(context.coordinator.textFieldDidChange(_:)), for: .editingChanged)
-        textField.returnKeyType = .done
-        textField.textAlignment = .center
-        textField.font = UIFont.systemFont(ofSize: 20)
-        return textField
-    }
-
-    func updateUIView(_ uiView: UITextField, context: Context) {
-        uiView.text = text
-        if isEditing {
-            uiView.becomeFirstResponder()
-        } else {
-            uiView.resignFirstResponder()
-        }
-    }
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(parent: self)
-    }
-}
-
-struct CrosswordPreView: View {
-    var body: some View {
-        CrosswordView()
-    }
-}
-
-#Preview {
-    CrosswordPreView()
-}

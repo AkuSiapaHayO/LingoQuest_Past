@@ -15,6 +15,9 @@
 		044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72DB2C0035F000FDF683 /* ContentView.swift */; };
 		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
 		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
+		049BCBB52C082B7A00D00EA1 /* CrosswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BCBB42C082B7A00D00EA1 /* CrosswordCell.swift */; };
+		049BCBB72C082BB500D00EA1 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BCBB62C082BB500D00EA1 /* CellView.swift */; };
+		049BCBB92C082BFA00D00EA1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049BCBB82C082BFA00D00EA1 /* CustomTextField.swift */; };
 		04DD3CE82C003F230007C583 /* CrosswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DD3CE72C003F230007C583 /* CrosswordView.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +33,9 @@
 		044B72DD2C0035F200FDF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044B72E02C0035F200FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoQuest_Mac.entitlements; sourceTree = "<group>"; };
+		049BCBB42C082B7A00D00EA1 /* CrosswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordCell.swift; sourceTree = "<group>"; };
+		049BCBB62C082BB500D00EA1 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		049BCBB82C082BFA00D00EA1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		04DD3CE72C003F230007C583 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,6 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				04DD3CE72C003F230007C583 /* CrosswordView.swift */,
+				049BCBB42C082B7A00D00EA1 /* CrosswordCell.swift */,
+				049BCBB62C082BB500D00EA1 /* CellView.swift */,
+				049BCBB82C082BFA00D00EA1 /* CustomTextField.swift */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
@@ -217,6 +226,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049BCBB52C082B7A00D00EA1 /* CrosswordCell.swift in Sources */,
+				049BCBB72C082BB500D00EA1 /* CellView.swift in Sources */,
+				049BCBB92C082BFA00D00EA1 /* CustomTextField.swift in Sources */,
 				044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
 				04DD3CE82C003F230007C583 /* CrosswordView.swift in Sources */,
