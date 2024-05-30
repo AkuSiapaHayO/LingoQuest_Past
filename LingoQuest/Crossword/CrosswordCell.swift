@@ -5,7 +5,6 @@
 //  Created by MacBook Pro on 30/05/24.
 //
 
-import Foundation
 import SwiftUI
 
 class CrosswordCell: Identifiable, ObservableObject {
@@ -19,3 +18,4 @@ class CrosswordCell: Identifiable, ObservableObject {
         self.isEditable = isEditable
     }
 }
+

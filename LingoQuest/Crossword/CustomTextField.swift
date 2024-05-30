@@ -4,7 +4,6 @@
 //
 //  Created by MacBook Pro on 30/05/24.
 //
-
 import SwiftUI
 
 struct CustomTextField: UIViewRepresentable {
@@ -62,4 +61,3 @@ struct CustomTextField: UIViewRepresentable {
         Coordinator(parent: self)
     }
 }
-
