@@ -14,7 +14,10 @@ struct CustomButton: View {
     let backgroundRectangle: LinearGradient
     let shadow: Color
     let stroke: Color
+    let paddingStart: CGFloat
+    let paddingEnd: CGFloat
     let backgroundBox: LinearGradient
+    let topBottomPadding: CGFloat
     
     var body: some View {
         Button(action: action) {
@@ -39,10 +42,10 @@ struct CustomButton: View {
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
             }
-            .padding(.top, 20)
-            .padding(.bottom, 20)
-            .padding(.leading, 70)
-            .padding(.trailing, 70)
+            .padding(.top, topBottomPadding)
+            .padding(.bottom, topBottomPadding)
+            .padding(.leading, paddingStart)
+            .padding(.trailing, paddingEnd)
             .background(backgroundBox)
             .clipShape(RoundedRectangle(cornerRadius: 90))
         }

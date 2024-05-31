@@ -1,6 +1,6 @@
 //
 //  Home.swift
-//  LingoQuest
+//  LingoQuest_Mac
 //
 //  Created by Dhiaz Ramadhan on 31/05/24.
 //
@@ -8,34 +8,36 @@
 import SwiftUI
 
 struct Home: View {
+    @StateObject private var streakController = StreakController()
+    
     var body: some View {
         VStack(alignment: .center, spacing: 90) {
             VStack {
                 Text("Welcome To")
                     .font(
-                        Font.custom("Poppins", size: 32)
+                        Font.custom("Poppins", size: 70)
                             .weight(.semibold)
                     )
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
-                    .frame(width: 211, height: 43, alignment: .top)
+                    .frame(width: 553, height: 96, alignment: .top)
                 
                 Text("LingoQuest")
                     .font(
-                        Font.custom("Poppins", size: 40)
+                        Font.custom("Poppins", size: 100)
                             .weight(.bold)
                     )
                     .multilineTextAlignment(.center)
                     .foregroundColor(.black)
-                    .frame(width: 241, height: 55, alignment: .top)
+                    .frame(width: 630, height: 136, alignment: .top)
             }
             
             VStack(spacing: 15) {
                 CustomButton(
                     action: {
-                        print("Button tapped!")
+                        // Goto page
                     },
-                    spacing: 35,
+                    spacing: 225,
                     text: "Crossword",
                     backgroundRectangle: LinearGradient(
                         stops: [
@@ -54,14 +56,15 @@ struct Home: View {
                         ],
                         startPoint: UnitPoint(x: 0.86, y: -3.28),
                         endPoint: UnitPoint(x: 0.86, y: 4.27)
-                    )
+                    ),
+                    topBottomPadding: 20
                 )
                 
                 CustomButton(
                     action: {
-                        print("Button tapped!")
+                        // Goto page
                     },
-                    spacing: 5,
+                    spacing: 193,
                     text: "Pronunciation",
                     backgroundRectangle: LinearGradient(
                         stops: [
@@ -80,14 +83,15 @@ struct Home: View {
                         ],
                         startPoint: UnitPoint(x: 0.86, y: -3.28),
                         endPoint: UnitPoint(x: 0.86, y: 4.27)
-                    )
+                    ),
+                    topBottomPadding: 20
                 )
                 
                 CustomButton(
                     action: {
-                        print("Button tapped!")
+                        // Goto page
                     },
-                    spacing: 15,
+                    spacing: 205,
                     text: "Blank Space",
                     backgroundRectangle: LinearGradient(
                         stops: [
@@ -106,14 +110,15 @@ struct Home: View {
                         ],
                         startPoint: UnitPoint(x: 0.86, y: -3.28),
                         endPoint: UnitPoint(x: 0.86, y: 4.27)
-                    )
+                    ),
+                    topBottomPadding: 20
                 )
                 
                 CustomButton(
                     action: {
-                        print("Button tapped!")
+                        // Goto page
                     },
-                    spacing: 50,
+                    spacing: 243,
                     text: "Calendar",
                     backgroundRectangle: LinearGradient(
                         stops: [
@@ -132,8 +137,16 @@ struct Home: View {
                         ],
                         startPoint: UnitPoint(x: 0.86, y: -3.28),
                         endPoint: UnitPoint(x: 0.86, y: 4.27)
-                    )
+                    ),
+                    topBottomPadding: 20
                 )
+                
+                Text("Day Streak: \(streakController.currentStreak)")
+                    .font(.largeTitle)
+                    .padding()
+            }
+            .onAppear {
+                streakController.resetDailyFlags()
             }
         }
         .padding(0)
