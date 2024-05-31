@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "correctAnswer": "cat"
+    },
+    {
+        "id": 2,
+        "correctAnswer": "dog"
+    },
+    {
+        "id": 3,
+        "correctAnswer": "banana"
+    },
+    {
+        "id": 4,
+        "correctAnswer": "elephant"
+    },
+    {
+        "id": 5,
+        "correctAnswer": "difficult"
+    },
+    {
+        "id": 6,
+        "correctAnswer": "imagination"
+    },
+    {
+        "id": 7,
+        "correctAnswer": "supercalifragilisticexpialidocious"
+    },
+    {
+        "id": 8,
+        "correctAnswer": "phenomenon"
+    },
+    {
+        "id": 9,
+        "correctAnswer": "antidisestablishmentarianism"
+    },
+    {
+        "id": 10,
+        "correctAnswer": "pneumonoultramicroscopicsilicovolcanoconiosis"
+    },
+    {
+        "id": 11,
+        "correctAnswer": "honorificabilitudinitatibus"
+    },
+    {
+        "id": 12,
+        "correctAnswer": "floccinaucinihilipilification"
+    },
+    {
+        "id": 13,
+        "correctAnswer": "hippopotomonstrosesquipedaliophobia"
+    },
+    {
+        "id": 14,
+        "correctAnswer": "thyroparathyroidectomized"
+    }
+]

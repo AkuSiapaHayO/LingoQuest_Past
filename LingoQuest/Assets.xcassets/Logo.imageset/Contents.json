@@ -3,8 +3,15 @@
     {
       "filename" : "DALL·E 2024-05-17 09.33.51 - A vibrant logo for a language learning app named 'LingoQuest'. The design should be fairly simple and minimalistic, with the hex color #1B6F99 used pr Background Removed.png",
       "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {
