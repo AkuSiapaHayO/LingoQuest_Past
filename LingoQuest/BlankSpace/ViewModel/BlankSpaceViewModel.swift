@@ -4,6 +4,7 @@ class BlankSpaceViewModel: ObservableObject {
     @Published var currentLevel: Int
     @Published var paragraph: String = ""
     @Published var choices: [String] = []
+    @Published var showCompletionPopup: Bool = false
 
     private var correctAnswers: [String] = []
     private var levelsData: [LevelData] = []
@@ -26,7 +27,8 @@ class BlankSpaceViewModel: ObservableObject {
     }
 
     func completeLevel() {
-        // Logic to mark the level as complete and unlock the next level
+        showCompletionPopup = true
+        unlockNextLevel()
     }
 
     private func loadLevelData() {
@@ -40,4 +42,10 @@ class BlankSpaceViewModel: ObservableObject {
             }
         }
     }
+
+    private func unlockNextLevel() {
+        let nextLevel = currentLevel + 1
+        UserDefaults.standard.set(true, forKey: "level_\(nextLevel)_unlocked")
+    }
 }
+

@@ -3,6 +3,7 @@ import SwiftUI
 struct BlankSpaceView: View {
     @ObservedObject var viewModel: BlankSpaceViewModel
     @State private var selectedWords: [String] = []
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack {
@@ -50,6 +51,15 @@ struct BlankSpaceView: View {
         .onAppear {
             viewModel.loadLevel()
         }
+        .alert(isPresented: $viewModel.showCompletionPopup) {
+            Alert(
+                title: Text("Level Completed"),
+                message: Text("You have completed the level."),
+                dismissButton: .default(Text("OK")) {
+                    presentationMode.wrappedValue.dismiss()
+                }
+            )
+        }
     }
 }
 
@@ -58,3 +68,4 @@ struct BlankSpaceView_Previews: PreviewProvider {
         BlankSpaceView(viewModel: BlankSpaceViewModel(level: 1))
     }
 }
+

@@ -8,8 +8,10 @@ class LevelViewModel: ObservableObject {
     }
 
     func isUnlocked(level: Int) -> Bool {
-        guard let levelData = levelsData.first(where: { $0.id == level }) else { return false }
-        return levelData.isUnlocked
+        if level == 1 {
+            return true
+        }
+        return UserDefaults.standard.bool(forKey: "level_\(level)_unlocked")
     }
 
     func loadLevels() {
@@ -25,28 +27,8 @@ class LevelViewModel: ObservableObject {
     }
 
     func unlockNextLevel(after level: Int) {
-        if let index = levelsData.firstIndex(where: { $0.id == level }) {
-            if index + 1 < levelsData.count {
-                levelsData[index + 1].isUnlocked = true
-                saveLevels()
-            }
-        }
-    }
-
-    private func saveLevels() {
-        do {
-            let encoder = JSONEncoder()
-            let data = try encoder.encode(levelsData)
-            if let url = getDocumentsDirectory()?.appendingPathComponent("levels.json") {
-                try data.write(to: url)
-            }
-        } catch {
-            print("Failed to save level data: \(error)")
-        }
-    }
-
-    private func getDocumentsDirectory() -> URL? {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths.first
+        let nextLevel = level + 1
+        UserDefaults.standard.set(true, forKey: "level_\(nextLevel)_unlocked")
     }
 }
+

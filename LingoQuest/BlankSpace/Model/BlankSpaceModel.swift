@@ -5,5 +5,4 @@ struct LevelData: Codable {
     let paragraph: String
     let correctAnswer: [String]
     let choices: [String]
-    var isUnlocked: Bool
 }
