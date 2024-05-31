@@ -11,7 +11,7 @@ struct Home: View {
     @StateObject private var streakController = StreakController()
     
     var body: some View {
-        VStack(alignment: .center, spacing: 90) {
+        VStack(alignment: .center, spacing: 60) {
             VStack {
                 Text("Welcome To")
                     .font(
@@ -19,7 +19,6 @@ struct Home: View {
                             .weight(.semibold)
                     )
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.black)
                     .frame(width: 553, height: 96, alignment: .top)
                 
                 Text("LingoQuest")
@@ -28,17 +27,18 @@ struct Home: View {
                             .weight(.bold)
                     )
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.black)
                     .frame(width: 630, height: 136, alignment: .top)
             }
             
-            VStack(spacing: 15) {
+            VStack(spacing: 30) {
                 CustomButton(
                     action: {
                         // Goto page
                     },
-                    spacing: 225,
+                    spacing: 120,
+                    rectangleSize: 45,
                     text: "Crossword",
+                    size: 45,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
@@ -49,6 +49,8 @@ struct Home: View {
                     ),
                     shadow: Color(red: 0, green: 0.16, blue: 0.48).opacity(0.25),
                     stroke: Color(red: 0.81, green: 0.24, blue: 0.24),
+                    paddingStart: 60,
+                    paddingEnd: 180,
                     backgroundBox: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.27),
@@ -64,8 +66,10 @@ struct Home: View {
                     action: {
                         // Goto page
                     },
-                    spacing: 193,
+                    spacing: 100,
+                    rectangleSize: 45,
                     text: "Pronunciation",
+                    size: 45,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
@@ -76,6 +80,8 @@ struct Home: View {
                     ),
                     shadow: Color(red: 0, green: 0.16, blue: 0.48).opacity(0.25),
                     stroke: Color(red: 0.9, green: 0.62, blue: 0.21),
+                    paddingStart: 60,
+                    paddingEnd: 140,
                     backgroundBox: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.26),
@@ -91,8 +97,10 @@ struct Home: View {
                     action: {
                         // Goto page
                     },
-                    spacing: 205,
+                    spacing: 100,
+                    rectangleSize: 45,
                     text: "Blank Space",
+                    size: 45,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.17),
@@ -103,6 +111,8 @@ struct Home: View {
                     ),
                     shadow: Color(red: 0, green: 0.16, blue: 0.48).opacity(0.25),
                     stroke: Color(red: 0.21, green: 0.59, blue: 0.2),
+                    paddingStart: 60,
+                    paddingEnd: 160,
                     backgroundBox: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.30),
@@ -118,8 +128,10 @@ struct Home: View {
                     action: {
                         // Goto page
                     },
-                    spacing: 243,
+                    spacing: 120,
+                    rectangleSize: 45,
                     text: "Calendar",
+                    size: 45,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
@@ -130,6 +142,8 @@ struct Home: View {
                     ),
                     shadow: Color(red: 0, green: 0.16, blue: 0.48).opacity(0.25),
                     stroke: Color(red: 0.24, green: 0.5, blue: 0.81),
+                    paddingStart: 60,
+                    paddingEnd: 210,
                     backgroundBox: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.29),

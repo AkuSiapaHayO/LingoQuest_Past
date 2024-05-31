@@ -10,7 +10,9 @@ import SwiftUI
 struct CustomButton: View {
     let action: () -> Void
     let spacing: CGFloat
+    let rectangleSize: CGFloat
     let text: String
+    let size: CGFloat
     let backgroundRectangle: LinearGradient
     let shadow: Color
     let stroke: Color
@@ -24,7 +26,7 @@ struct CustomButton: View {
             HStack(spacing: spacing) {
                 Rectangle()
                     .foregroundColor(.clear)
-                    .frame(width: 30, height: 30)
+                    .frame(width: rectangleSize, height: rectangleSize)
                     .background(backgroundRectangle)
                     .cornerRadius(10)
                     .shadow(color: shadow, radius: 5, x: 0, y: 0)
@@ -36,7 +38,7 @@ struct CustomButton: View {
                 
                 Text(text)
                     .font(
-                        Font.custom("Poppins", size: 24)
+                        Font.custom("Poppins", size: size)
                             .weight(.bold)
                     )
                     .multilineTextAlignment(.center)
@@ -49,5 +51,6 @@ struct CustomButton: View {
             .background(backgroundBox)
             .clipShape(RoundedRectangle(cornerRadius: 90))
         }
+        .buttonStyle(PlainButtonStyle())
     }
 }

@@ -36,7 +36,9 @@ struct Home: View {
                         // Goto page
                     },
                     spacing: 40,
+                    rectangleSize: 30,
                     text: "Crossword",
+                    size: 24,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
@@ -65,7 +67,9 @@ struct Home: View {
                         // Goto page
                     },
                     spacing: 30,
+                    rectangleSize: 30,
                     text: "Pronunciation",
+                    size: 24,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
@@ -94,7 +98,9 @@ struct Home: View {
                         // Goto page
                     },
                     spacing: 40,
+                    rectangleSize: 30,
                     text: "Blank Space",
+                    size: 24,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: .white, location: 0.17),
@@ -123,7 +129,9 @@ struct Home: View {
                         // Goto page
                     },
                     spacing: 53,
+                    rectangleSize: 30,
                     text: "Calendar",
+                    size: 24,
                     backgroundRectangle: LinearGradient(
                         stops: [
                             Gradient.Stop(color: Color(red: 0.92, green: 0.97, blue: 1), location: 0.17),
