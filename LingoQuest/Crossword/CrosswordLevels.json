@@ -4,13 +4,13 @@
         "questions": [
             {
                 "id": 1,
-                "direction": "mendatar",
+                "direction": "1. Mendatar",
                 "question": "Bahasa Inggrisnya 'kucing'",
                 "answer": "CAT"
             },
             {
                 "id": 2,
-                "direction": "menurun",
+                "direction": "2. Menurun",
                 "question": "Bahasa Inggrisnya 'mobil'",
                 "answer": "CAR"
             }
@@ -20,7 +20,8 @@
                 "id": 1,
                 "row": 0,
                 "col": 0,
-                "letter": "C"
+                "letter": "C",
+                "label": "1"
             },
             {
                 "id": 2,
@@ -53,13 +54,13 @@
         "questions": [
             {
                 "id": 3,
-                "direction": "mendatar",
+                "direction": "1. Mendatar",
                 "question": "Bahasa Inggrisnya 'ikan'",
                 "answer": "FISH"
             },
             {
                 "id": 4,
-                "direction": "menurun",
+                "direction": "2. Menurun",
                 "question": "Bahasa Inggrisnya 'kapal'",
                 "answer": "SHIP"
             }
@@ -69,7 +70,8 @@
                 "id": 6,
                 "row": 0,
                 "col": 0,
-                "letter": "F"
+                "letter": "F",
+                "label": "1"
             },
             {
                 "id": 7,
@@ -81,7 +83,8 @@
                 "id": 8,
                 "row": 0,
                 "col": 2,
-                "letter": "S"
+                "letter": "S",
+                "label": "2"
             },
             {
                 "id": 9,
@@ -110,83 +113,86 @@
         ]
     },
     {
-            "levelNumber": 3,
-            "questions": [
-                {
-                    "id": 5,
-                    "direction": "mendatar",
-                    "question": "Bahasa Inggrisnya 'raja'",
-                    "answer": "KING"
-                },
-                {
-                    "id": 6,
-                    "direction": "menurun",
-                    "question": "Bahasa Inggrisnya 'besar'",
-                    "answer": "BIG"
-                },
-                {
-                    "id": 7,
-                    "direction": "menurun",
-                    "question": "Bahasa Inggrisnya 'permainan'",
-                    "answer": "GAME"
-                }
-            ],
-            "answers": [
-                {
-                    "id": 13,
-                    "row": 1,
-                    "col": 0,
-                    "letter": "K"
-                },
-                {
-                    "id": 14,
-                    "row": 1,
-                    "col": 1,
-                    "letter": "I"
-                },
-                {
-                    "id": 15,
-                    "row": 1,
-                    "col": 2,
-                    "letter": "N"
-                },
-                {
-                    "id": 16,
-                    "row": 1,
-                    "col": 3,
-                    "letter": "G"
-                },
-                {
-                    "id": 17,
-                    "row": 0,
-                    "col": 1,
-                    "letter": "B"
-                },
-                {
-                    "id": 18,
-                    "row": 2,
-                    "col": 1,
-                    "letter": "G"
-                },
-                {
-                    "id": 19,
-                    "row": 2,
-                    "col": 3,
-                    "letter": "A"
-                },
-                {
-                    "id": 20,
-                    "row": 3,
-                    "col": 3,
-                    "letter": "M"
-                },
-                {
-                    "id": 21,
-                    "row": 4,
-                    "col": 3,
-                    "letter": "E"
-                }
-            ]
-        }
+        "levelNumber": 3,
+        "questions": [
+            {
+                "id": 5,
+                "direction": "1. Mendatar",
+                "question": "Bahasa Inggrisnya 'raja'",
+                "answer": "KING"
+            },
+            {
+                "id": 6,
+                "direction": "2. Menurun",
+                "question": "Bahasa Inggrisnya 'besar'",
+                "answer": "BIG"
+            },
+            {
+                "id": 7,
+                "direction": "3. Menurun",
+                "question": "Bahasa Inggrisnya 'permainan'",
+                "answer": "GAME"
+            }
+        ],
+        "answers": [
+            {
+                "id": 13,
+                "row": 1,
+                "col": 0,
+                "letter": "K",
+                "label": "1"
+            },
+            {
+                "id": 14,
+                "row": 1,
+                "col": 1,
+                "letter": "I"
+            },
+            {
+                "id": 15,
+                "row": 1,
+                "col": 2,
+                "letter": "N"
+            },
+            {
+                "id": 16,
+                "row": 1,
+                "col": 3,
+                "letter": "G",
+                "label": "3"
+            },
+            {
+                "id": 17,
+                "row": 0,
+                "col": 1,
+                "letter": "B",
+                "label": "2"
+            },
+            {
+                "id": 18,
+                "row": 2,
+                "col": 1,
+                "letter": "G"
+            },
+            {
+                "id": 19,
+                "row": 2,
+                "col": 3,
+                "letter": "A"
+            },
+            {
+                "id": 20,
+                "row": 3,
+                "col": 3,
+                "letter": "M"
+            },
+            {
+                "id": 21,
+                "row": 4,
+                "col": 3,
+                "letter": "E"
+            }
+        ]
+    }
 ]
 

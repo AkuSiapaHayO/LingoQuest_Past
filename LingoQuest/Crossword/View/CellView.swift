@@ -17,11 +17,11 @@ struct CellView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            ZStack {
+            ZStack(alignment: .topLeading) {
                 Rectangle()
-                    .fill(self.isSelected ? Color.blue : Color.white)
+                    .fill(self.isSelected ? Color.blue : (self.cell.isEditable ? Color.white : Color.clear))
+                    .border(self.cell.isEditable ? Color.black : Color.clear, width: 1)
                     .frame(width: geometry.size.width, height: geometry.size.height)
-                    .border(Color.black, width: 1)
                 
                 if self.cell.isEditable {
                     CustomTextField(text: self.$cell.letter, isEditing: self.$isEditing, onCommit: {
@@ -38,11 +38,20 @@ struct CellView: View {
                         self.isFocused = true
                         self.onTap()
                     }
-                } else {
+                } else if self.cell.letter.isEmpty == false {
                     Text(self.cell.letter)
                         .font(Font.system(size: 20))
                         .frame(width: geometry.size.width, height: geometry.size.height)
+                        .background(Color.clear)
+                }
+                
+                if let label = self.cell.label {
+                    Text(label)
+                        .font(.caption)
+                        .padding(2)
                         .background(Color.white)
+                        .cornerRadius(2)
+                        .offset(x: 2, y: 2)
                 }
             }
             .onTapGesture {
@@ -50,5 +59,6 @@ struct CellView: View {
                 self.onTap()
             }
         }
+        .frame(minWidth: 40, minHeight: 40) // Ensure cells have a minimum size for readability
     }
 }

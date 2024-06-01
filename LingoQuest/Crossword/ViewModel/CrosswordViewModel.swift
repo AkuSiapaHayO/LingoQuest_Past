@@ -49,7 +49,7 @@ class CrosswordViewModel: ObservableObject {
         var grid: [[CrosswordCell]] = Array(repeating: Array(repeating: CrosswordCell(id: 0, isEditable: false), count: maxCol + 1), count: maxRow + 1)
         
         for answer in level.answers {
-            grid[answer.row][answer.col] = CrosswordCell(id: answer.id, letter: "", isEditable: true)
+            grid[answer.row][answer.col] = CrosswordCell(id: answer.id, letter: "", isEditable: true, label: answer.label)
         }
         
         self.crosswordGrid = grid
@@ -69,27 +69,5 @@ class CrosswordViewModel: ObservableObject {
             }
         }
         return true
-    }
-    
-    // Default initializer for previews
-    init() {
-        self.currentLevel = 1
-        self.levels = [
-            CrosswordLevelModel(
-                levelNumber: 1,
-                questions: [
-                    CrosswordQuestionModel(id: 1, direction: "mendatar", question: "Bahasa Inggrisnya 'kucing'", answer: "CAT"),
-                    CrosswordQuestionModel(id: 2, direction: "menurun", question: "Bahasa Inggrisnya 'mobil'", answer: "CAR")
-                ],
-                answers: [
-                    CrosswordAnswerModel(id: 1, row: 0, col: 0, letter: "C"),
-                    CrosswordAnswerModel(id: 2, row: 0, col: 1, letter: "A"),
-                    CrosswordAnswerModel(id: 3, row: 0, col: 2, letter: "T"),
-                    CrosswordAnswerModel(id: 4, row: 1, col: 0, letter: "A"),
-                    CrosswordAnswerModel(id: 5, row: 2, col: 0, letter: "R")
-                ]
-            )
-        ]
-        loadLevel(levelNumber: 1)
     }
 }
