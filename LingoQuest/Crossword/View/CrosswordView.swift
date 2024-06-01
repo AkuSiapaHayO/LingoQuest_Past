@@ -27,15 +27,20 @@ struct CrosswordView: View {
                 ForEach(viewModel.crosswordGrid.indices, id: \.self) { rowIndex in
                     HStack(spacing: 0) {
                         ForEach(viewModel.crosswordGrid[rowIndex].indices, id: \.self) { colIndex in
+                            let cell = viewModel.crosswordGrid[rowIndex][colIndex]
                             CellView(
-                                cell: viewModel.crosswordGrid[rowIndex][colIndex],
-                                isSelected: viewModel.selectedCell?.id == viewModel.crosswordGrid[rowIndex][colIndex].id,
+                                cell: cell,
+                                isSelected: viewModel.selectedCell?.id == cell.id,
                                 onTap: {
-                                    viewModel.selectedCell = viewModel.crosswordGrid[rowIndex][colIndex]
+                                    viewModel.selectedCell = cell
                                 },
                                 onCommit: {
                                     viewModel.checkForWin()
-                                }
+                                },
+                                showTopBorder: cell.isEditable || showBorder(row: rowIndex, col: colIndex, direction: .top),
+                                showLeadingBorder: cell.isEditable || showBorder(row: rowIndex, col: colIndex, direction: .leading),
+                                showBottomBorder: cell.isEditable || showBorder(row: rowIndex, col: colIndex, direction: .bottom),
+                                showTrailingBorder: cell.isEditable || showBorder(row: rowIndex, col: colIndex, direction: .trailing)
                             )
                         }
                     }
@@ -50,5 +55,25 @@ struct CrosswordView: View {
                 )
             }
         }
+    }
+
+    private func showBorder(row: Int, col: Int, direction: Edge) -> Bool {
+        switch direction {
+        case .top:
+            return row > 0 && viewModel.crosswordGrid[row - 1][col].isEditable
+        case .leading:
+            return col > 0 && viewModel.crosswordGrid[row][col - 1].isEditable
+        case .bottom:
+            return row < viewModel.crosswordGrid.count - 1 && viewModel.crosswordGrid[row + 1][col].isEditable
+        case .trailing:
+            return col < viewModel.crosswordGrid[row].count - 1 && viewModel.crosswordGrid[row][col + 1].isEditable
+        }
+    }
+}
+
+// Safe array subscript extension
+extension Collection {
+    subscript(safe index: Index) -> Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }

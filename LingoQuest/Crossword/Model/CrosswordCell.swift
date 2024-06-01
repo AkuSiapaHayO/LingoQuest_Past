@@ -10,7 +10,7 @@ class CrosswordCell: Identifiable, ObservableObject {
     let id: Int
     @Published var letter: String
     let isEditable: Bool
-    let label: String? 
+    let label: String?
     
     init(id: Int, letter: String = "", isEditable: Bool, label: String? = nil) {
         self.id = id
