@@ -14,5 +14,5 @@ struct LingoQuestApp: App {
             ContentView()
         }
     }
-}
+}  
 

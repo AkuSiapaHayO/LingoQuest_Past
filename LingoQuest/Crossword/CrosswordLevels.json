@@ -1,0 +1,192 @@
+[
+    {
+        "levelNumber": 1,
+        "questions": [
+            {
+                "id": 1,
+                "direction": "mendatar",
+                "question": "Bahasa Inggrisnya 'kucing'",
+                "answer": "CAT"
+            },
+            {
+                "id": 2,
+                "direction": "menurun",
+                "question": "Bahasa Inggrisnya 'mobil'",
+                "answer": "CAR"
+            }
+        ],
+        "answers": [
+            {
+                "id": 1,
+                "row": 0,
+                "col": 0,
+                "letter": "C"
+            },
+            {
+                "id": 2,
+                "row": 0,
+                "col": 1,
+                "letter": "A"
+            },
+            {
+                "id": 3,
+                "row": 0,
+                "col": 2,
+                "letter": "T"
+            },
+            {
+                "id": 4,
+                "row": 1,
+                "col": 0,
+                "letter": "A"
+            },
+            {
+                "id": 5,
+                "row": 2,
+                "col": 0,
+                "letter": "R"
+            }
+        ]
+    },
+    {
+        "levelNumber": 2,
+        "questions": [
+            {
+                "id": 3,
+                "direction": "mendatar",
+                "question": "Bahasa Inggrisnya 'ikan'",
+                "answer": "FISH"
+            },
+            {
+                "id": 4,
+                "direction": "menurun",
+                "question": "Bahasa Inggrisnya 'kapal'",
+                "answer": "SHIP"
+            }
+        ],
+        "answers": [
+            {
+                "id": 6,
+                "row": 0,
+                "col": 0,
+                "letter": "F"
+            },
+            {
+                "id": 7,
+                "row": 0,
+                "col": 1,
+                "letter": "I"
+            },
+            {
+                "id": 8,
+                "row": 0,
+                "col": 2,
+                "letter": "S"
+            },
+            {
+                "id": 9,
+                "row": 0,
+                "col": 3,
+                "letter": "H"
+            },
+            {
+                "id": 10,
+                "row": 1,
+                "col": 2,
+                "letter": "H"
+            },
+            {
+                "id": 11,
+                "row": 2,
+                "col": 2,
+                "letter": "I"
+            },
+            {
+                "id": 12,
+                "row": 3,
+                "col": 2,
+                "letter": "P"
+            }
+        ]
+    },
+    {
+            "levelNumber": 3,
+            "questions": [
+                {
+                    "id": 5,
+                    "direction": "mendatar",
+                    "question": "Bahasa Inggrisnya 'raja'",
+                    "answer": "KING"
+                },
+                {
+                    "id": 6,
+                    "direction": "menurun",
+                    "question": "Bahasa Inggrisnya 'besar'",
+                    "answer": "BIG"
+                },
+                {
+                    "id": 7,
+                    "direction": "menurun",
+                    "question": "Bahasa Inggrisnya 'permainan'",
+                    "answer": "GAME"
+                }
+            ],
+            "answers": [
+                {
+                    "id": 13,
+                    "row": 1,
+                    "col": 0,
+                    "letter": "K"
+                },
+                {
+                    "id": 14,
+                    "row": 1,
+                    "col": 1,
+                    "letter": "I"
+                },
+                {
+                    "id": 15,
+                    "row": 1,
+                    "col": 2,
+                    "letter": "N"
+                },
+                {
+                    "id": 16,
+                    "row": 1,
+                    "col": 3,
+                    "letter": "G"
+                },
+                {
+                    "id": 17,
+                    "row": 0,
+                    "col": 1,
+                    "letter": "B"
+                },
+                {
+                    "id": 18,
+                    "row": 2,
+                    "col": 1,
+                    "letter": "G"
+                },
+                {
+                    "id": 19,
+                    "row": 2,
+                    "col": 3,
+                    "letter": "A"
+                },
+                {
+                    "id": 20,
+                    "row": 3,
+                    "col": 3,
+                    "letter": "M"
+                },
+                {
+                    "id": 21,
+                    "row": 4,
+                    "col": 3,
+                    "letter": "E"
+                }
+            ]
+        }
+]
+

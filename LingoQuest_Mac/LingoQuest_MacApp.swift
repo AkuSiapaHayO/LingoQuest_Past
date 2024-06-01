@@ -11,7 +11,7 @@ import SwiftUI
 struct LingoQuest_MacApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
         }
     }
 }
