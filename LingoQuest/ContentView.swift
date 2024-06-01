@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CrosswordView(levelNumber: 7)
+        CrosswordView(levelNumber: 15)
     }
 }
 
@@ -17,3 +17,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
