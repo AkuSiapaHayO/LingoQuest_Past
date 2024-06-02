@@ -8,9 +8,13 @@ import SwiftUI
 
 struct CrosswordView: View {
     @StateObject private var viewModel: CrosswordViewModel
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var levelsViewModel: CrosswordLevelViewModel
+    @State private var showCompletionAlert = false
 
-    init(levelNumber: Int) {
+    init(levelNumber: Int, levelsViewModel: CrosswordLevelViewModel) {
         _viewModel = StateObject(wrappedValue: CrosswordViewModel(levelNumber: levelNumber))
+        self.levelsViewModel = levelsViewModel
     }
 
     var body: some View {
@@ -47,12 +51,20 @@ struct CrosswordView: View {
                 }
             }
             .padding()
-            .alert(isPresented: $viewModel.showingAlert) {
+            .alert(isPresented: $showCompletionAlert) {
                 Alert(
                     title: Text("Congratulations!"),
                     message: Text("You completed the crossword for level \(viewModel.currentLevel)!"),
-                    dismissButton: .default(Text("OK"))
+                    dismissButton: .default(Text("OK")) {
+                        levelsViewModel.unlockNextLevel(after: viewModel.currentLevel)
+                        presentationMode.wrappedValue.dismiss()
+                    }
                 )
+            }
+        }
+        .onReceive(viewModel.$showingAlert) { showingAlert in
+            if showingAlert {
+                showCompletionAlert = true
             }
         }
     }
@@ -68,12 +80,5 @@ struct CrosswordView: View {
         case .trailing:
             return col < viewModel.crosswordGrid[row].count - 1 && viewModel.crosswordGrid[row][col + 1].isEditable
         }
-    }
-}
-
-// Safe array subscript extension
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
     }
 }

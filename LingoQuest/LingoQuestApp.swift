@@ -11,8 +11,8 @@ import SwiftUI
 struct LingoQuestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CrosswordLevelsView()
         }
     }
-}  
+}
 
