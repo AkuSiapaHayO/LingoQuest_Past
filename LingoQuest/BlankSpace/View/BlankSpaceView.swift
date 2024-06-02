@@ -4,65 +4,83 @@ struct BlankSpaceView: View {
     @ObservedObject var viewModel: BlankSpaceViewModel
     @State private var selectedWords: [String] = []
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.colorScheme) var colorScheme
 
     var body: some View {
         VStack {
-            Text("Level \(viewModel.currentLevel)")
-                .font(.largeTitle)
-                .padding()
+            VStack(spacing: 16) {
+                Spacer()
+                Text("Blank Space")
+                    .font(.title)
 
-            ScrollView {
-                Text(viewModel.paragraph)
-                    .multilineTextAlignment(.leading)
-                    .padding()
-                    .frame(maxWidth: .infinity, alignment: .leading)
-            }
-            .frame(maxHeight: 200) // Adjust this height as necessary
+                Text("Level \(viewModel.currentLevel)")
+                    .font(.largeTitle)
+                    .bold()
 
-            VStack {
-                // Wrapping words manually into rows
-                let rows = createRows(words: viewModel.choices)
-                ForEach(rows, id: \.self) { row in
-                    HStack {
-                        ForEach(row, id: \.self) { word in
-                            Button(action: {
-                                if selectedWords.contains(word) {
-                                    selectedWords.removeAll { $0 == word }
-                                } else {
-                                    selectedWords.append(word)
+                ScrollView {
+                    Text(viewModel.paragraph)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .frame(maxWidth: .infinity, alignment: .center)
+                        .font(.title3)
+                }
+                .frame(maxHeight: 120) // Adjust this height as necessary
+                .padding(.top, 48)
+
+                VStack {
+                    // Wrapping words manually into rows
+                    let rows = createRows(words: viewModel.choices)
+                    ForEach(rows, id: \.self) { row in
+                        HStack {
+                            ForEach(row, id: \.self) { word in
+                                Button(action: {
+                                    if selectedWords.contains(word) {
+                                        selectedWords.removeAll { $0 == word }
+                                    } else {
+                                        selectedWords.append(word)
+                                    }
+                                }) {
+                                    Text(word)
+                                        .padding()
+                                        .background(selectedWords.contains(word) ? Color(red: 59 / 255, green: 166 / 255, blue: 102 / 255) : Color.clear)
+                                        .overlay(
+                                            RoundedRectangle(cornerRadius: 8)
+                                                .stroke(selectedWords.contains(word) ? Color(red: 59 / 255, green: 166 / 255, blue: 102 / 255) : (colorScheme == .dark ? Color.white : Color.black), lineWidth: 2)
+                                        )
+                                        .foregroundColor(selectedWords.contains(word) ? Color.white : (colorScheme == .dark ? Color.white : Color.black))
+                                        .cornerRadius(8)
+                                        .fixedSize(horizontal: true, vertical: false) // Prevent word wrapping
                                 }
-                            }) {
-                                Text(word)
-                                    .padding()
-                                    .background(selectedWords.contains(word) ? Color.blue : Color.gray)
-                                    .cornerRadius(8)
-                                    .foregroundColor(.white)
-                                    .fixedSize(horizontal: true, vertical: false) // Prevent word wrapping
                             }
                         }
                     }
                 }
-            }
-            .padding()
+                .padding()
 
-            Button(action: {
-                if viewModel.checkAnswer(selectedWords: selectedWords) {
-                    viewModel.completeLevel()
-                } else {
-                    selectedWords.removeAll()
+                Button(action: {
+                    if viewModel.checkAnswer(selectedWords: selectedWords) {
+                        viewModel.completeLevel()
+                    } else {
+                        selectedWords.removeAll()
+                    }
+                }) {
+                    Text("Answer")
+                        .font(.title2)
+                        .bold()
+                        .frame(maxWidth: .infinity, minHeight: 50)
+                        .background(Color(red: 59 / 255, green: 166 / 255, blue: 102 / 255))
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-            }) {
-                Text("Answer")
-                    .padding()
-                    .background(Color.green)
-                    .cornerRadius(8)
-                    .foregroundColor(.white)
+                .padding(.horizontal, 32)
+                .padding(.vertical, 32)
+                Spacer()
             }
-            .padding()
+            .onAppear {
+                viewModel.loadLevel()
+            }
         }
-        .onAppear {
-            viewModel.loadLevel()
-        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .alert(isPresented: $viewModel.showCompletionPopup) {
             Alert(
                 title: Text("Level Completed"),
@@ -79,7 +97,7 @@ struct BlankSpaceView: View {
         var rows: [[String]] = []
         var currentRow: [String] = []
         var currentWidth: CGFloat = 0
-        let maxWidth: CGFloat = UIScreen.main.bounds.width - 40 // Adjust this value as necessary
+        let maxWidth: CGFloat = UIScreen.main.bounds.width - 80 // Adjust this value as necessary
 
         for word in words {
             let wordWidth = (word as NSString).size(withAttributes: [.font: UIFont.systemFont(ofSize: 17)]).width + 30 // Adjust padding as necessary
@@ -103,7 +121,7 @@ struct BlankSpaceView: View {
 
 struct BlankSpaceView_Previews: PreviewProvider {
     static var previews: some View {
-        BlankSpaceView(viewModel: BlankSpaceViewModel(level: 1))
+        BlankSpaceView(viewModel: BlankSpaceViewModel(level: 8))
     }
 }
 

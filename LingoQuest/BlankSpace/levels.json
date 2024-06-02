@@ -75,19 +75,19 @@
          "id": 13,
          "paragraph": "In the ____ archives, the ____ historian found ____ manuscripts detailing the ____ of ancient civilizations.",
          "correctAnswer": ["hidden", "eminent", "valuable", "achievements"],
-         "choices": ["hidden", "results", "valuable", "achievements", "secret", "unknown", "documents", "discoveries", "eminent", "notes"]
+         "choices": ["hidden", "results", "valuable", "achievements", "secret", "unknown", "documents", "discoveries", "eminent"]
      },
      {
          "id": 14,
          "paragraph": "The ____ engineer designed an ____ system to ____ the ____ of renewable energy sources.",
          "correctAnswer": ["innovative", "efficient", "optimize", "utilization"],
-         "choices": ["innovative", "efficient", "optimize", "utilization", "creative", "powerful", "improve", "usage", "new", "use"]
+         "choices": ["innovative", "efficient", "utilization", "creative", "powerful", "improve", "usage", "new", "use"]
      },
      {
          "id": 15,
          "paragraph": "In the ____ recesses of the ancient ____ stood a solitary ____ inscribed with ____ glyphs.",
          "correctAnswer": ["tenebrous", "forest", "obelisk", "arcane"],
-         "choices": ["forest", "tenebrous", "tree", "monolith", "obelisk", "arcane", "shadowy", "mysterious", "grove", "dark"]
+         "choices": ["forest", "tenebrous", "monolith", "obelisk", "arcane", "shadowy", "mysterious", "grove", "dark"]
      }
 ]
  
