@@ -6,23 +6,36 @@ struct LevelView: View {
     var body: some View {
         NavigationView {
             VStack {
-                ForEach(0..<3) { row in
-                    HStack {
-                        ForEach(0..<5) { column in
-                            let level = row * 5 + column + 1
+                Spacer()
+                VStack {
+                    Text("Select Level")
+                        .font(.title)
+                        .padding(.top, 20)
+                    
+                    Text("Blank Space")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.bottom, 20)
+                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 20) {
+                        ForEach(1...15, id: \.self) { level in
                             NavigationLink(destination: BlankSpaceView(viewModel: BlankSpaceViewModel(level: level))) {
                                 Text("\(level)")
-                                    .frame(width: 60, height: 60)
-                                    .background(viewModel.isUnlocked(level: level) ? Color.blue : Color.gray)
+                                    .font(.title)
+                                    .frame(width: 80, height: 80)
+                                    .background(viewModel.isUnlocked(level: level) ? Color(red: 59 / 255, green: 166 / 255, blue: 102 / 255) : Color.gray)
                                     .foregroundColor(.white)
-                                    .cornerRadius(8)
+                                    .cornerRadius(10)
                             }
                             .disabled(!viewModel.isUnlocked(level: level))
                         }
                     }
+                    .padding()
                 }
+                Spacer()
             }
-            .padding()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 20)
             .onAppear {
                 viewModel.loadLevels()
             }

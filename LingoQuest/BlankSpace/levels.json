@@ -1,15 +1,96 @@
 [
-    {
-        "id": 1,
-        "paragraph": "The quick brown ____ jumps over the lazy ____.",
-        "correctAnswer": ["fox", "dog"],
-        "choices": ["fox", "dog", "cat", "camel", "lion"],
-    },
-    {
-        "id": 2,
-        "paragraph": "A journey of a thousand miles begins with a single ____.",
-        "correctAnswer": ["step"],
-        "choices": ["step", "run", "jump"],
-    },
+     {
+         "id": 1,
+         "paragraph": "He ____ to the store every day.",
+         "correctAnswer": ["goes"],
+         "choices": ["goes", "go", "going", "gone"]
+     },
+     {
+         "id": 2,
+         "paragraph": "They ____ playing soccer at the park.",
+         "correctAnswer": ["are"],
+         "choices": ["are", "is", "was", "were"]
+     },
+     {
+         "id": 3,
+         "paragraph": "She ____ a book when I called her.",
+         "correctAnswer": ["was reading"],
+         "choices": ["was reading", "is reading", "read", "reads"]
+     },
+     {
+         "id": 4,
+         "paragraph": "If I ____ you, I would apologize.",
+         "correctAnswer": ["were"],
+         "choices": ["were", "was", "am", "is"]
+     },
+     {
+         "id": 5,
+         "paragraph": "The cake ____ baked ____ my grandmother.",
+         "correctAnswer": ["was", "by"],
+         "choices": ["was", "were", "is", "are", "by", "from"]
+     },
+     {
+         "id": 6,
+         "paragraph": "They ____ finished their homework ____ dinner.",
+         "correctAnswer": ["had", "before"],
+         "choices": ["had", "have", "has", "having", "before", "after"]
+     },
+     {
+         "id": 7,
+         "paragraph": "The car ____ washed ____ my brother.",
+         "correctAnswer": ["was", "by"],
+         "choices": ["was", "is", "were", "are", "by", "from"]
+     },
+     {
+         "id": 8,
+         "paragraph": "She ____ been working ____ morning.",
+         "correctAnswer": ["has", "since"],
+         "choices": ["has", "is", "was", "are", "since", "from"]
+     },
+     {
+         "id": 9,
+         "paragraph": "She ____ to the store to buy some ____, but she forgot her ____ at home.",
+         "correctAnswer": ["went", "milk", "wallet"],
+         "choices": ["went", "walked", "milk", "phone", "wallet", "keys", "car", "house"]
+     },
+     {
+         "id": 10,
+         "paragraph": "All that ____ is not ____.",
+         "correctAnswer": ["glitters", "gold"],
+         "choices": ["sparkles", "shines", "glitters", "gold", "glows", "gleams"]
+     },
+     {
+         "id": 11,
+         "paragraph": "The pen is ____ than the ____.",
+         "correctAnswer": ["mightier", "sword"],
+         "choices": ["shield", "sword", "stronger", "pen", "braver", "mightier"]
+     },
+     {
+         "id": 12,
+         "paragraph": "In the ____ of knowledge, a ____ mind seeks ____ amidst the obscurity of ignorance.",
+         "correctAnswer": ["pursuit", "curious", "enlightenment"],
+         "choices": ["pursuit", "search", "curious", "dark", "open", "shadow", "quest", "inquisitive", "enlightenment"]
+     },
+     {
+         "id": 13,
+         "paragraph": "In the ____ archives, the ____ historian found ____ manuscripts detailing the ____ of ancient civilizations.",
+         "correctAnswer": ["hidden", "eminent", "valuable", "achievements"],
+         "choices": ["hidden", "results", "valuable", "achievements", "secret", "unknown", "documents", "discoveries", "eminent", "notes"]
+     },
+     {
+         "id": 14,
+         "paragraph": "The ____ engineer designed an ____ system to ____ the ____ of renewable energy sources.",
+         "correctAnswer": ["innovative", "efficient", "optimize", "utilization"],
+         "choices": ["innovative", "efficient", "optimize", "utilization", "creative", "powerful", "improve", "usage", "new", "use"]
+     },
+     {
+         "id": 15,
+         "paragraph": "In the ____ recesses of the ancient ____ stood a solitary ____ inscribed with ____ glyphs.",
+         "correctAnswer": ["tenebrous", "forest", "obelisk", "arcane"],
+         "choices": ["forest", "tenebrous", "tree", "monolith", "obelisk", "arcane", "shadowy", "mysterious", "grove", "dark"]
+     }
 ]
+ 
+     
+
 

@@ -1,6 +1,7 @@
 import SwiftUI
+import AVFoundation
 
-class BlankSpaceViewModel: ObservableObject {
+class BlankSpaceViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var currentLevel: Int
     @Published var paragraph: String = ""
     @Published var choices: [String] = []
@@ -8,11 +9,15 @@ class BlankSpaceViewModel: ObservableObject {
 
     private var correctAnswers: [String] = []
     private var levelsData: [LevelData] = []
+    private var synthesizer = AVSpeechSynthesizer()
+    private var speechCompletion: (() -> Void)?
 
     init(level: Int) {
         self.currentLevel = level
+        super.init()
         loadLevelData()
         loadLevel()
+        synthesizer.delegate = self
     }
 
     func loadLevel() {
@@ -27,8 +32,11 @@ class BlankSpaceViewModel: ObservableObject {
     }
 
     func completeLevel() {
-        showCompletionPopup = true
-        unlockNextLevel()
+        let filledParagraph = getFilledParagraph()
+        speak(text: filledParagraph) { [weak self] in
+            self?.showCompletionPopup = true
+            self?.unlockNextLevel()
+        }
     }
 
     private func loadLevelData() {
@@ -46,6 +54,31 @@ class BlankSpaceViewModel: ObservableObject {
     private func unlockNextLevel() {
         let nextLevel = currentLevel + 1
         UserDefaults.standard.set(true, forKey: "level_\(nextLevel)_unlocked")
+    }
+
+    private func getFilledParagraph() -> String {
+        var filledParagraph = paragraph
+        var index = filledParagraph.startIndex
+
+        for answer in correctAnswers {
+            if let range = filledParagraph.range(of: "____") {
+                filledParagraph.replaceSubrange(range, with: answer)
+                index = range.upperBound
+            }
+        }
+
+        return filledParagraph
+    }
+
+    private func speak(text: String, completion: @escaping () -> Void) {
+        self.speechCompletion = completion
+        let utterance = AVSpeechUtterance(string: text)
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        synthesizer.speak(utterance)
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        speechCompletion?()
     }
 }
 
