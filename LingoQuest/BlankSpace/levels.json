@@ -81,7 +81,7 @@
          "id": 14,
          "paragraph": "The ____ engineer designed an ____ system to ____ the ____ of renewable energy sources.",
          "correctAnswer": ["innovative", "efficient", "optimize", "utilization"],
-         "choices": ["innovative", "efficient", "utilization", "creative", "powerful", "improve", "usage", "new", "use"]
+         "choices": ["innovative", "efficient", "utilization", "creative", "powerful", "optimize", "usage", "new", "use"]
      },
      {
          "id": 15,

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04130F382C0CA412001D8847 /* LevelDetailViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04130F372C0CA412001D8847 /* LevelDetailViewMac.swift */; };
+		04130F3A2C0CA45B001D8847 /* LevelViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04130F392C0CA45B001D8847 /* LevelViewMac.swift */; };
+		04130F3C2C0CA46E001D8847 /* BlankSpaceViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04130F3B2C0CA46E001D8847 /* BlankSpaceViewMac.swift */; };
+		04320B3A2C0C6B1C007904C8 /* levels.json in Resources */ = {isa = PBXBuildFile; fileRef = 044B72EA2C07500700FDF683 /* levels.json */; };
+		04320B3B2C0C6B1C007904C8 /* LevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72F52C075A2B00FDF683 /* LevelViewModel.swift */; };
+		04320B3C2C0C6B1C007904C8 /* BlankSpaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72EC2C07504400FDF683 /* BlankSpaceViewModel.swift */; };
+		04320B3D2C0C6B1C007904C8 /* BlankSpaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72EE2C07505800FDF683 /* BlankSpaceModel.swift */; };
 		044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72C52C0033DE00FDF683 /* LingoQuestApp.swift */; };
 		044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72C72C0033DE00FDF683 /* ContentView.swift */; };
 		044B72CA2C0033E100FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72C92C0033E100FDF683 /* Assets.xcassets */; };
@@ -24,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04130F372C0CA412001D8847 /* LevelDetailViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelDetailViewMac.swift; sourceTree = "<group>"; };
+		04130F392C0CA45B001D8847 /* LevelViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelViewMac.swift; sourceTree = "<group>"; };
+		04130F3B2C0CA46E001D8847 /* BlankSpaceViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankSpaceViewMac.swift; sourceTree = "<group>"; };
 		044B72C22C0033DE00FDF683 /* LingoQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LingoQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044B72C52C0033DE00FDF683 /* LingoQuestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LingoQuestApp.swift; sourceTree = "<group>"; };
 		044B72C72C0033DE00FDF683 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +71,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04320B322C0C6A52007904C8 /* BlankSpace */ = {
+			isa = PBXGroup;
+			children = (
+				04320B332C0C6A5F007904C8 /* View */,
+			);
+			path = BlankSpace;
+			sourceTree = "<group>";
+		};
+		04320B332C0C6A5F007904C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04130F392C0CA45B001D8847 /* LevelViewMac.swift */,
+				04130F372C0CA412001D8847 /* LevelDetailViewMac.swift */,
+				04130F3B2C0CA46E001D8847 /* BlankSpaceViewMac.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		044B72B92C0033DE00FDF683 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +130,7 @@
 		044B72D82C0035F000FDF683 /* LingoQuest_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				04320B322C0C6A52007904C8 /* BlankSpace */,
 				044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */,
 				044B72DB2C0035F000FDF683 /* ContentView.swift */,
 				044B72DD2C0035F200FDF683 /* Assets.xcassets */,
@@ -246,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */,
+				04320B3A2C0C6B1C007904C8 /* levels.json in Resources */,
 				044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */,
+				04130F382C0CA412001D8847 /* LevelDetailViewMac.swift in Sources */,
+				04130F3C2C0CA46E001D8847 /* BlankSpaceViewMac.swift in Sources */,
+				04320B3B2C0C6B1C007904C8 /* LevelViewModel.swift in Sources */,
+				04130F3A2C0CA45B001D8847 /* LevelViewMac.swift in Sources */,
+				04320B3C2C0C6B1C007904C8 /* BlankSpaceViewModel.swift in Sources */,
+				04320B3D2C0C6B1C007904C8 /* BlankSpaceModel.swift in Sources */,
 				044B72DA2C0035F000FDF683 /* LingoQuest_MacApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
