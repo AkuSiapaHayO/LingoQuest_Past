@@ -10,8 +10,6 @@ import AVFoundation
 import Speech
 import SwiftUI
 
-
-/// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
 actor SpeechRecognizer: ObservableObject {
     enum RecognizerError: Error {
         case nilRecognizer
@@ -36,10 +34,6 @@ actor SpeechRecognizer: ObservableObject {
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
     
-    /**
-     Initializes a new speech recognizer. If this is the first time you've used the class, it
-     requests access to the speech recognizer and the microphone.
-     */
     init() {
         recognizer = SFSpeechRecognizer()
         guard recognizer != nil else {
@@ -78,13 +72,7 @@ actor SpeechRecognizer: ObservableObject {
             await reset()
         }
     }
-    
-    /**
-     Begin transcribing audio.
-     
-     Creates a `SFSpeechRecognitionTask` that transcribes speech to text until you call `stopTranscribing()`.
-     The resulting transcription is continuously written to the published `transcript` property.
-     */
+
     private func transcribe() {
         guard let recognizer, recognizer.isAvailable else {
             self.transcribe(RecognizerError.recognizerIsUnavailable)
@@ -104,7 +92,6 @@ actor SpeechRecognizer: ObservableObject {
         }
     }
     
-    /// Reset the speech recognizer.
     private func reset() {
         task?.cancel()
         audioEngine?.stop()
@@ -148,7 +135,6 @@ actor SpeechRecognizer: ObservableObject {
         }
     }
     
-    
     nonisolated private func transcribe(_ message: String) {
         Task { @MainActor in
             transcript = message
@@ -167,7 +153,6 @@ actor SpeechRecognizer: ObservableObject {
     }
 }
 
-
 extension SFSpeechRecognizer {
     static func hasAuthorizationToRecognize() async -> Bool {
         await withCheckedContinuation { continuation in
@@ -177,7 +162,6 @@ extension SFSpeechRecognizer {
         }
     }
 }
-
 
 extension AVAudioSession {
     func hasPermissionToRecord() async -> Bool {

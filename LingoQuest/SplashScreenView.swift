@@ -15,7 +15,7 @@ struct SplashScreenView: View {
         ZStack {
             Color.white
             if self.isActive{
-                ContentView()
+                LevelsView()
             } else{
                 VStack {
                     Image("Logo")

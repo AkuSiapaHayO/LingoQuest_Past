@@ -23,6 +23,16 @@
 		CB5810172C081E9800898F6B /* LevelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5810162C081E9800898F6B /* LevelsViewModel.swift */; };
 		CB58101E2C0822C800898F6B /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = CB58101D2C0822C800898F6B /* words.json */; };
 		CB5810202C08423300898F6B /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58101F2C08423300898F6B /* SpeechRecognizer.swift */; };
+		CB5810282C09C5B900898F6B /* LevelsViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5810272C09C5B900898F6B /* LevelsViewMac.swift */; };
+		CB58102B2C0C6D9900898F6B /* LevelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5810162C081E9800898F6B /* LevelsViewModel.swift */; };
+		CB58102C2C0C6D9900898F6B /* LevelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB5810112C081D3600898F6B /* LevelData.swift */; };
+		CB58102E2C0C6D9900898F6B /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = CB58101D2C0822C800898F6B /* words.json */; };
+		CB58102F2C0C6DAA00898F6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72C92C0033E100FDF683 /* Assets.xcassets */; };
+		CBF6DB9B2C103B0F009765DB /* SayTheWordViewMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6DB9A2C103B0F009765DB /* SayTheWordViewMac.swift */; };
+		CBF6DB9E2C103D03009765DB /* SayTheWordViewModelMac.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF6DB9D2C103D03009765DB /* SayTheWordViewModelMac.swift */; };
+		CBF6DB9F2C10A002009765DB /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB982C0FFFC1009765DB /* AVFAudio.framework */; };
+		CBF6DBA02C10A002009765DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB942C0FFF28009765DB /* AVFoundation.framework */; };
+		CBF6DBA12C10A009009765DB /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB962C0FFF30009765DB /* Speech.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +55,13 @@
 		CB5810162C081E9800898F6B /* LevelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewModel.swift; sourceTree = "<group>"; };
 		CB58101D2C0822C800898F6B /* words.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
 		CB58101F2C08423300898F6B /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		CB5810272C09C5B900898F6B /* LevelsViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelsViewMac.swift; sourceTree = "<group>"; };
+		CBF6DB942C0FFF28009765DB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		CBF6DB962C0FFF30009765DB /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/Speech.framework; sourceTree = DEVELOPER_DIR; };
+		CBF6DB982C0FFFC1009765DB /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk/System/Library/Frameworks/AVFAudio.framework; sourceTree = DEVELOPER_DIR; };
+		CBF6DB9A2C103B0F009765DB /* SayTheWordViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordViewMac.swift; sourceTree = "<group>"; };
+		CBF6DB9D2C103D03009765DB /* SayTheWordViewModelMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordViewModelMac.swift; sourceTree = "<group>"; };
+		CBF6DBA32C10A79F009765DB /* LingoQuest-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LingoQuest-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF6DBA12C10A009009765DB /* Speech.framework in Frameworks */,
+				CBF6DB9F2C10A002009765DB /* AVFAudio.framework in Frameworks */,
+				CBF6DBA02C10A002009765DB /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +91,7 @@
 				044B72C42C0033DE00FDF683 /* LingoQuest */,
 				044B72D82C0035F000FDF683 /* LingoQuest_Mac */,
 				044B72C32C0033DE00FDF683 /* Products */,
+				CBF6DB932C0FFF28009765DB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +128,8 @@
 		044B72D82C0035F000FDF683 /* LingoQuest_Mac */ = {
 			isa = PBXGroup;
 			children = (
+				CBF6DBA32C10A79F009765DB /* LingoQuest-Mac-Info.plist */,
+				CB5810252C09C58F00898F6B /* SayTheWord */,
 				044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */,
 				044B72DB2C0035F000FDF683 /* ContentView.swift */,
 				044B72DD2C0035F200FDF683 /* Assets.xcassets */,
@@ -158,6 +181,42 @@
 			children = (
 				CB5810162C081E9800898F6B /* LevelsViewModel.swift */,
 				CB58100F2C081BE600898F6B /* SayTheWordViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CB5810252C09C58F00898F6B /* SayTheWord */ = {
+			isa = PBXGroup;
+			children = (
+				CBF6DB9C2C103CF0009765DB /* ViewModel */,
+				CB5810262C09C59E00898F6B /* View */,
+			);
+			path = SayTheWord;
+			sourceTree = "<group>";
+		};
+		CB5810262C09C59E00898F6B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CB5810272C09C5B900898F6B /* LevelsViewMac.swift */,
+				CBF6DB9A2C103B0F009765DB /* SayTheWordViewMac.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CBF6DB932C0FFF28009765DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBF6DB982C0FFFC1009765DB /* AVFAudio.framework */,
+				CBF6DB962C0FFF30009765DB /* Speech.framework */,
+				CBF6DB942C0FFF28009765DB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CBF6DB9C2C103CF0009765DB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CBF6DB9D2C103D03009765DB /* SayTheWordViewModelMac.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,7 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB58102E2C0C6D9900898F6B /* words.json in Resources */,
 				044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */,
+				CB58102F2C0C6DAA00898F6B /* Assets.xcassets in Resources */,
 				044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,8 +340,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBF6DB9B2C103B0F009765DB /* SayTheWordViewMac.swift in Sources */,
+				CB5810282C09C5B900898F6B /* LevelsViewMac.swift in Sources */,
 				044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */,
+				CB58102B2C0C6D9900898F6B /* LevelsViewModel.swift in Sources */,
+				CB58102C2C0C6D9900898F6B /* LevelData.swift in Sources */,
 				044B72DA2C0035F000FDF683 /* LingoQuest_MacApp.swift in Sources */,
+				CBF6DB9E2C103D03009765DB /* SayTheWordViewModelMac.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +490,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -457,7 +523,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -482,9 +548,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LingoQuest_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LingoQuest-Mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -496,6 +566,7 @@
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				c = c;
 			};
 			name = Debug;
 		};
@@ -509,9 +580,13 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LingoQuest_Mac/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "LingoQuest-Mac-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -523,6 +598,7 @@
 				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
+				c = c;
 			};
 			name = Release;
 		};
