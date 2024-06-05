@@ -9,46 +9,55 @@ import SwiftUI
 
 
 struct CrosswordLevelsView: View {
-    @StateObject var levelsViewModel = CrosswordLevelViewModel()
-    
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
+    @StateObject var viewModel = CrosswordLevelViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(1...15, id: \.self) { level in
-                        NavigationLink(destination: CrosswordView(levelNumber: level, levelsViewModel: levelsViewModel).onAppear {
-                            levelsViewModel.loadLevels()
-                        }) {
-                            Text("Level \(level)")
-                                .padding()
-                                .background(levelsViewModel.isUnlocked(level: level) ? Color.green : Color.gray)
-                                .cornerRadius(10)
-                                .foregroundColor(.white)
+                Spacer()
+                VStack {
+                    Text("Select Level")
+                        .font(.title)
+                        .padding(.top, 20)
+                    
+                    Text("Crossword")
+                        .font(.largeTitle)
+                        .bold()
+                    Text("Puzzle")
+                        .font(.largeTitle)
+                        .bold()
+                        .padding(.bottom, 20)
+                    
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 20) {
+                        ForEach(1...15, id: \.self) { level in
+                            NavigationLink(destination: CrosswordView(levelNumber: level,levelsViewModel: CrosswordLevelViewModel())) {
+                                Text("\(level)")
+                                    .font(.title)
+                                    .frame(width: 80, height: 80)
+                                    .background(viewModel.isUnlocked(level: level) ? Color(red: 7 / 255, green: 169 / 255, blue: 243 / 255) : Color.gray)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            }
+                            .disabled(!viewModel.isUnlocked(level: level))
                         }
-                        .disabled(!levelsViewModel.isUnlocked(level: level))
                     }
+                    .padding()
                 }
-                .padding()
+                Spacer()
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .padding(.horizontal, 20)
             .onAppear {
-                levelsViewModel.loadLevels()
+                viewModel.loadLevels()
             }
-            .navigationTitle("Select Level")
         }
     }
 }
 
-struct LevelsView_Previews: PreviewProvider {
+struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
-        CrosswordLevelsView()
+        CrosswordLevelsView(viewModel: CrosswordLevelViewModel())
     }
 }
-#Preview {
-    CrosswordLevelsView(levelsViewModel: CrosswordLevelViewModel())
-}
+
+

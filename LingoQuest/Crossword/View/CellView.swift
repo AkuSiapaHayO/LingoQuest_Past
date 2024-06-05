@@ -24,7 +24,6 @@ struct CellView: View {
             ZStack(alignment: .topLeading) {
                 Rectangle()
                     .fill(self.isSelected ? Color.blue : (self.cell.isEditable ? Color.white : Color.clear))
-                    .frame(width: geometry.size.width, height: geometry.size.height)
 
                 if self.cell.isEditable {
                     CustomTextField(text: self.$cell.letter, isEditing: self.$isEditing, onCommit: {
@@ -32,7 +31,6 @@ struct CellView: View {
                     })
                     .multilineTextAlignment(.center)
                     .font(Font.system(size: 20))
-                    .frame(width: geometry.size.width, height: geometry.size.height)
                     .background(Color.white)
                     .focused($isFocused)
                     .onTapGesture {
@@ -42,7 +40,6 @@ struct CellView: View {
                 } else if !self.cell.letter.isEmpty {
                     Text(self.cell.letter)
                         .font(Font.system(size: 20))
-                        .frame(width: geometry.size.width, height: geometry.size.height)
                         .background(Color.clear)
                 }
 
@@ -85,6 +82,7 @@ struct CellView: View {
                 self.onTap()
             }
         }
+        .aspectRatio(1, contentMode: .fit) // Ensure cells have a square aspect ratio
         .frame(minWidth: 40, minHeight: 40) // Ensure cells have a minimum size for readability
     }
 }

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        CrosswordView(levelNumber: 1,levelsViewModel: CrosswordLevelViewModel())
+        CrosswordView(levelNumber: 6,levelsViewModel: CrosswordLevelViewModel())
     }
 }
 

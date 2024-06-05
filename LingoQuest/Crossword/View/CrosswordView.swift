@@ -19,14 +19,11 @@ struct CrosswordView: View {
 
     var body: some View {
         VStack {
-            List(viewModel.questions) { question in
-                VStack(alignment: .leading) {
-                    Text(question.direction)
-                        .font(.headline)
-                    Text(question.question)
-                        .font(.body)
-                }
-            }
+            Text("Level \(viewModel.currentLevel)")
+                .font(.largeTitle)
+                .bold()
+                .padding(.top)
+
             VStack(spacing: 0) {
                 ForEach(viewModel.crosswordGrid.indices, id: \.self) { rowIndex in
                     HStack(spacing: 0) {
@@ -61,7 +58,27 @@ struct CrosswordView: View {
                     }
                 )
             }
+
+            List(viewModel.questions) { question in
+                VStack(alignment: .leading) {
+                    Text(question.direction)
+                        .font(.headline)
+                    Text(question.question)
+                        .font(.body)
+                }
+                .padding()
+                .background(Color.white.opacity(0.8))
+                .cornerRadius(10)
+            }
+            .padding()
+            .background(Color.white.opacity(0.2))
+            .cornerRadius(10)
+            .padding()
         }
+        .background(
+            LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.purple.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.all)
+        )
         .onReceive(viewModel.$showingAlert) { showingAlert in
             if showingAlert {
                 showCompletionAlert = true
@@ -81,4 +98,8 @@ struct CrosswordView: View {
             return col < viewModel.crosswordGrid[row].count - 1 && viewModel.crosswordGrid[row][col + 1].isEditable
         }
     }
+}
+
+#Preview {
+    CrosswordView(levelNumber: 1, levelsViewModel: CrosswordLevelViewModel())
 }

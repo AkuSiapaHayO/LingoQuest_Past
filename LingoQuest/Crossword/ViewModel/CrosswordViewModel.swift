@@ -20,7 +20,7 @@ class CrosswordViewModel: ObservableObject {
         loadLevelData()
         loadLevel(levelNumber: levelNumber)
     }
-
+    
     func loadLevel(levelNumber: Int) {
         guard let level = levels.first(where: { $0.levelNumber == levelNumber }) else { return }
         createGrid(from: level)
@@ -41,7 +41,7 @@ class CrosswordViewModel: ObservableObject {
             print("Failed to load or parse JSON data: \(error)")
         }
     }
-
+    
     private func createGrid(from level: CrosswordLevelModel) {
         let maxRow = level.answers.max(by: { $0.row < $1.row })?.row ?? 0
         let maxCol = level.answers.max(by: { $0.col < $1.col })?.col ?? 0
@@ -54,14 +54,14 @@ class CrosswordViewModel: ObservableObject {
         
         self.crosswordGrid = grid
     }
-
+    
     func checkForWin() {
         guard let level = levels.first(where: { $0.levelNumber == currentLevel }) else { return }
         if allAnswersCorrect(level: level) {
             self.showingAlert = true
         }
     }
-
+    
     private func allAnswersCorrect(level: CrosswordLevelModel) -> Bool {
         for answer in level.answers {
             if crosswordGrid[answer.row][answer.col].letter.uppercased() != answer.letter {

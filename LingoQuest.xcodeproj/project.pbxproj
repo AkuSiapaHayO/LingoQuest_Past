@@ -48,7 +48,7 @@
 		049BCBBC2C08345400D00EA1 /* CrosswordAnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordAnswerModel.swift; sourceTree = "<group>"; };
 		049BCBC02C0834DC00D00EA1 /* CrosswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordViewModel.swift; sourceTree = "<group>"; };
 		049BCBC22C08375B00D00EA1 /* CrosswordQuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordQuestionModel.swift; sourceTree = "<group>"; };
-		04DD3CE72C003F230007C583 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; };
+		04DD3CE72C003F230007C583 /* CrosswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; wrapsLines = 1; };
 		04FB445F2C0C71700008114C /* CrosswordLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordLevelViewModel.swift; sourceTree = "<group>"; };
 		04FB44612C0C731C0008114C /* CrosswordLevelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrosswordLevelsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				04DD3CE62C003F060007C583 /* Crossword */,
+				047078192C098078007E5A1A /* CrosswordLevels.json */,
 				044B72C52C0033DE00FDF683 /* LingoQuestApp.swift */,
 				044B72C72C0033DE00FDF683 /* ContentView.swift */,
 				044B72C92C0033E100FDF683 /* Assets.xcassets */,
@@ -166,7 +167,6 @@
 				0470781B2C098082007E5A1A /* Model */,
 				0470781D2C098098007E5A1A /* View */,
 				0470781E2C09809E007E5A1A /* ViewModel */,
-				047078192C098078007E5A1A /* CrosswordLevels.json */,
 			);
 			path = Crossword;
 			sourceTree = "<group>";
