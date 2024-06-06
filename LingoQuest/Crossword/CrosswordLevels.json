@@ -409,13 +409,13 @@
             },
             {
                 "id": 19,
-                "direction": "1. Mendatar",
+                "direction": "2. Mendatar",
                 "question": "Bahasa Inggrisnya 'tikus'",
                 "answer": "MOUSE"
             },
             {
                 "id": 20,
-                "direction": "2. Menurun",
+                "direction": "3. Menurun",
                 "question": "Bahasa Inggrisnya 'berbagi'",
                 "answer": "SHARE"
             }
@@ -424,119 +424,83 @@
             {
                 "id": 47,
                 "row": 0,
-                "col": 0,
+                "col": 1,
                 "letter": "H",
                 "label": "1"
             },
             {
                 "id": 48,
                 "row": 0,
-                "col": 1,
+                "col": 2,
                 "letter": "O"
             },
             {
                 "id": 49,
                 "row": 0,
-                "col": 2,
+                "col": 3,
                 "letter": "U"
             },
             {
                 "id": 50,
                 "row": 0,
-                "col": 3,
-                "letter": "S"
+                "col": 4,
+                "letter": "S",
+                "label": "3"
             },
             {
                 "id": 51,
                 "row": 0,
-                "col": 4,
-                "letter": "E",
-                "label": "2"
-            },
-            {
-                "id": 52,
-                "row": 1,
-                "col": 4,
-                "letter": "O"
-            },
-            {
-                "id": 53,
-                "row": 2,
-                "col": 4,
-                "letter": "M"
-            },
-            {
-                "id": 54,
-                "row": 3,
-                "col": 4,
-                "letter": "A"
-            },
-            {
-                "id": 55,
-                "row": 4,
-                "col": 4,
-                "letter": "T"
-            },
-            {
-                "id": 56,
-                "row": 5,
-                "col": 4,
-                "letter": "O"
+                "col": 5,
+                "letter": "E"
             },
             {
                 "id": 57,
-                "row": 1,
+                "row": 4,
                 "col": 0,
                 "letter": "M",
-                "label": "3"
+                "label": "2"
             },
             {
                 "id": 58,
-                "row": 1,
+                "row": 4,
                 "col": 1,
                 "letter": "O"
             },
             {
                 "id": 59,
-                "row": 1,
+                "row": 4,
                 "col": 2,
                 "letter": "U"
             },
             {
                 "id": 60,
-                "row": 1,
-                "col": 3,
+                "row": 4,
+                "col":3,
                 "letter": "S"
             },
             {
                 "id": 61,
-                "row": 1,
+                "row": 4,
                 "col": 4,
                 "letter": "E"
             },
             {
                 "id": 62,
-                "row": 2,
-                "col": 0,
+                "row": 1,
+                "col": 4,
                 "letter": "H"
             },
             {
                 "id": 63,
-                "row": 3,
-                "col": 0,
+                "row": 2,
+                "col": 4,
                 "letter": "A"
             },
             {
                 "id": 64,
-                "row": 4,
-                "col": 0,
+                "row": 3,
+                "col": 4,
                 "letter": "R"
-            },
-            {
-                "id": 65,
-                "row": 5,
-                "col": 0,
-                "letter": "E"
             }
         ]
     },
