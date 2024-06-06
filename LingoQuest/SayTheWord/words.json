@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "correctAnswer": "cat"
+    },
+    {
+        "id": 2,
+        "correctAnswer": "dog"
+    },
+    {
+        "id": 3,
+        "correctAnswer": "banana"
+    },
+    {
+        "id": 4,
+        "correctAnswer": "elephant"
+    },
+    {
+        "id": 5,
+        "correctAnswer": "difficult"
+    },
+    {
+        "id": 6,
+        "correctAnswer": "imagination"
+    },
+    {
+        "id": 7,
+        "correctAnswer": "pronunciation"
+    },
+    {
+        "id": 8,
+        "correctAnswer": "entrepreneur"
+    },
+    {
+        "id": 9,
+        "correctAnswer": "miscellaneous"
+    },
+    {
+        "id": 10,
+        "correctAnswer": "uncharacteristically"
+    },
+    {
+        "id": 11,
+        "correctAnswer": "otorhinolaryngologist"
+    },
+    {
+        "id": 12,
+        "correctAnswer": "subdermatoglyphic"
+    },
+    {
+        "id": 13,
+        "correctAnswer": "immunoelectrophoresis"
+    },
+    {
+        "id": 14,
+        "correctAnswer": "spectrophotofluorometrically"
+    },
+    {
+        "id": 15,
+        "correctAnswer": "pseudopseudohypoparathyroidism"
+    }
+]
