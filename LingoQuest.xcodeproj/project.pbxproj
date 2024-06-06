@@ -15,12 +15,10 @@
 		044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72DB2C0035F000FDF683 /* ContentView.swift */; };
 		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
 		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
-		D957B9502C0964F800ED0C6F /* StreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF92C095A770065C960 /* StreakController.swift */; };
 		D957B9582C09692900ED0C6F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957B9572C09692900ED0C6F /* Home.swift */; };
 		D957B95B2C09695A00ED0C6F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF72C0937450065C960 /* CustomButton.swift */; };
 		D97FCAF62C09300A0065C960 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF52C09300A0065C960 /* Home.swift */; };
 		D97FCAF82C0937450065C960 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF72C0937450065C960 /* CustomButton.swift */; };
-		D97FCAFA2C095A770065C960 /* StreakController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF92C095A770065C960 /* StreakController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +36,6 @@
 		D957B9572C09692900ED0C6F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D97FCAF52C09300A0065C960 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		D97FCAF72C0937450065C960 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		D97FCAF92C095A770065C960 /* StreakController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +128,6 @@
 			children = (
 				D97FCAF52C09300A0065C960 /* Home.swift */,
 				D97FCAF72C0937450065C960 /* CustomButton.swift */,
-				D97FCAF92C095A770065C960 /* StreakController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -240,7 +236,6 @@
 				D97FCAF62C09300A0065C960 /* Home.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
 				D97FCAF82C0937450065C960 /* CustomButton.swift in Sources */,
-				D97FCAFA2C095A770065C960 /* StreakController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -248,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D957B9502C0964F800ED0C6F /* StreakController.swift in Sources */,
 				044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */,
 				D957B95B2C09695A00ED0C6F /* CustomButton.swift in Sources */,
 				D957B9582C09692900ED0C6F /* Home.swift in Sources */,

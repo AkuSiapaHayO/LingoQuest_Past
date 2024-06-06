@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct Home: View {
-    @StateObject private var streakController = StreakController()
-    
     var body: some View {
         VStack(alignment: .center, spacing: 60) {
             VStack {
@@ -154,13 +152,6 @@ struct Home: View {
                     ),
                     topBottomPadding: 20
                 )
-                
-                Text("Day Streak: \(streakController.currentStreak)")
-                    .font(.largeTitle)
-                    .padding()
-            }
-            .onAppear {
-                streakController.resetDailyFlags()
             }
         }
         .padding(0)
