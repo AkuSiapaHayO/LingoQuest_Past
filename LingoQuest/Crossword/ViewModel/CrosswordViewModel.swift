@@ -70,4 +70,8 @@ class CrosswordViewModel: ObservableObject {
         }
         return true
     }
+
+    func resetAlert() {
+        self.showingAlert = false
+    }
 }
