@@ -8,18 +8,22 @@ import SwiftUI
 
 struct CrosswordView: View {
     @StateObject private var viewModel: CrosswordViewModel
-
-    init(levelNumber: Int) {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var levelsViewModel: CrosswordLevelsViewModel
+    @State private var showCompletionAlert = false
+    
+    init(levelNumber: Int, levelsViewModel: CrosswordLevelsViewModel) {
         _viewModel = StateObject(wrappedValue: CrosswordViewModel(levelNumber: levelNumber))
+        self.levelsViewModel = levelsViewModel
     }
-
+    
     var body: some View {
         VStack {
             Text("Level \(viewModel.currentLevel)")
                 .font(.largeTitle)
                 .bold()
                 .padding(.top)
-
+            
             VStack(spacing: 0) {
                 ForEach(viewModel.crosswordGrid.indices, id: \.self) { rowIndex in
                     HStack(spacing: 0) {
@@ -44,22 +48,18 @@ struct CrosswordView: View {
                 }
             }
             .padding()
-            .alert(isPresented: $viewModel.showingAlert) {
+            .alert(isPresented: $showCompletionAlert) {
                 Alert(
                     title: Text("Congratulations!"),
                     message: Text("You completed the crossword for level \(viewModel.currentLevel)!"),
-<<<<<<< HEAD
                     dismissButton: .default(Text("OK")) {
                         levelsViewModel.unlockNextLevel(after: viewModel.currentLevel)
-                        viewModel.resetAlert()
                         presentationMode.wrappedValue.dismiss()
                     }
-=======
-                    dismissButton: .default(Text("OK"))
->>>>>>> parent of 442ce20 (level view plus vm done)
                 )
             }
-
+            
+            
             List(viewModel.questions) { question in
                 VStack(alignment: .leading) {
                     Text(question.direction)
@@ -75,9 +75,7 @@ struct CrosswordView: View {
             .background(Color.white.opacity(0.2))
             .cornerRadius(10)
             .padding()
-            .frame(maxHeight: UIScreen.main.bounds.size.height * (UIDevice.current.userInterfaceIdiom == .pad ? 0.4 : 0.8))
         }
-<<<<<<< HEAD
         .background(
             LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.6), Color.purple.opacity(0.6)]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
@@ -87,10 +85,8 @@ struct CrosswordView: View {
                 showCompletionAlert = true
             }
         }
-=======
->>>>>>> parent of 442ce20 (level view plus vm done)
     }
-
+    
     private func showBorder(row: Int, col: Int, direction: Edge) -> Bool {
         switch direction {
         case .top:
@@ -105,14 +101,6 @@ struct CrosswordView: View {
     }
 }
 
-<<<<<<< HEAD
 #Preview {
-    CrosswordView(levelNumber: 1, levelsViewModel: CrosswordLevelViewModel())
-=======
-// Safe array subscript extension
-extension Collection {
-    subscript(safe index: Index) -> Element? {
-        return indices.contains(index) ? self[index] : nil
-    }
->>>>>>> parent of 442ce20 (level view plus vm done)
+    CrosswordView(levelNumber: 1, levelsViewModel: CrosswordLevelsViewModel())
 }

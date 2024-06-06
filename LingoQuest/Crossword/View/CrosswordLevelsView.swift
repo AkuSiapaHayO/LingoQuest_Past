@@ -2,14 +2,13 @@
 //  CrosswordLevelsView.swift
 //  LingoQuest
 //
-//  Created by MacBook Pro on 02/06/24.
+//  Created by MacBook Pro on 30/05/24.
 //
-
 import SwiftUI
 
-
 struct CrosswordLevelsView: View {
-    @StateObject var viewModel = CrosswordLevelViewModel()
+    
+    @StateObject var viewModel = CrosswordLevelsViewModel()
     
     var body: some View {
         NavigationView {
@@ -30,7 +29,7 @@ struct CrosswordLevelsView: View {
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 20) {
                         ForEach(1...15, id: \.self) { level in
-                            NavigationLink(destination: CrosswordView(levelNumber: level,levelsViewModel: CrosswordLevelViewModel())) {
+                            NavigationLink(destination: CrosswordView(levelNumber: level,levelsViewModel: CrosswordLevelsViewModel())) {
                                 Text("\(level)")
                                     .font(.title)
                                     .frame(width: 80, height: 80)
@@ -53,11 +52,8 @@ struct CrosswordLevelsView: View {
         }
     }
 }
-
 struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
-        CrosswordLevelsView(viewModel: CrosswordLevelViewModel())
+        CrosswordLevelsView(viewModel: CrosswordLevelsViewModel())
     }
 }
-
-
