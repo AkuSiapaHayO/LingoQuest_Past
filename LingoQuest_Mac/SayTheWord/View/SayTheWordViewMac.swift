@@ -52,6 +52,7 @@ struct SayTheWordViewMac: View {
                     )
                     .animation(.easeInOut(duration: 0.3), value: isRecording)
             }
+            .buttonStyle(PlainButtonStyle())
             .padding()
             
             Spacer()

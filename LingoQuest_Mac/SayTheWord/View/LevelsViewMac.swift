@@ -33,6 +33,7 @@ struct LevelsViewMac: View {
                         .disabled(!levelsViewModel.isUnlocked(level: level))
                     }
                 }
+                .buttonStyle(PlainButtonStyle())
                 .padding()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

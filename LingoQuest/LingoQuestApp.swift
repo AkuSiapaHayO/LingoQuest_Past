@@ -18,7 +18,7 @@ struct LingoQuestApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LevelsView()
+            SplashScreenView()
         }
     }
     
