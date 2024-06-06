@@ -9,16 +9,18 @@ import SwiftUI
 
 class CrosswordLevelsViewModel: ObservableObject {
     @Published var levelsData: [CrosswordLevelModel] = []
+    @Published var unlockedLevels: [Int] = []
 
     init() {
         loadLevels()
+        loadUnlockedLevels()
     }
 
     func isUnlocked(level: Int) -> Bool {
         if level == 1 {
             return true
         }
-        return UserDefaults.standard.bool(forKey: "level_\(level)_unlocked")
+        return unlockedLevels.contains(level)
     }
 
     func loadLevels() {
@@ -33,8 +35,17 @@ class CrosswordLevelsViewModel: ObservableObject {
         }
     }
 
+    func loadUnlockedLevels() {
+        for level in 2...15 {
+            if UserDefaults.standard.bool(forKey: "level_\(level)_unlocked") {
+                unlockedLevels.append(level)
+            }
+        }
+    }
+
     func unlockNextLevel(after level: Int) {
         let nextLevel = level + 1
         UserDefaults.standard.set(true, forKey: "level_\(nextLevel)_unlocked")
+        unlockedLevels.append(nextLevel)
     }
 }

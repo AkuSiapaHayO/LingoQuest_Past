@@ -100,7 +100,3 @@ struct CrosswordView: View {
         }
     }
 }
-
-#Preview {
-    CrosswordView(levelNumber: 1, levelsViewModel: CrosswordLevelsViewModel())
-}

@@ -7,7 +7,6 @@
 import SwiftUI
 
 struct CrosswordLevelsView: View {
-    
     @StateObject var viewModel = CrosswordLevelsViewModel()
     
     var body: some View {
@@ -29,7 +28,7 @@ struct CrosswordLevelsView: View {
                     
                     LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 20), count: 3), spacing: 20) {
                         ForEach(1...15, id: \.self) { level in
-                            NavigationLink(destination: CrosswordView(levelNumber: level,levelsViewModel: CrosswordLevelsViewModel())) {
+                            NavigationLink(destination: CrosswordView(levelNumber: level, levelsViewModel: viewModel)) {
                                 Text("\(level)")
                                     .font(.title)
                                     .frame(width: 80, height: 80)
@@ -49,9 +48,13 @@ struct CrosswordLevelsView: View {
             .onAppear {
                 viewModel.loadLevels()
             }
+            .onChange(of: viewModel.unlockedLevels) { _ in
+                viewModel.loadLevels()
+            }
         }
     }
 }
+
 struct LevelView_Previews: PreviewProvider {
     static var previews: some View {
         CrosswordLevelsView(viewModel: CrosswordLevelsViewModel())
