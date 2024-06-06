@@ -15,6 +15,7 @@
 		044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044B72DB2C0035F000FDF683 /* ContentView.swift */; };
 		044B72DE2C0035F200FDF683 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72DD2C0035F200FDF683 /* Assets.xcassets */; };
 		044B72E12C0035F200FDF683 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 044B72E02C0035F200FDF683 /* Preview Assets.xcassets */; };
+
 		CB58100C2C081AB800898F6B /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58100B2C081AB800898F6B /* SplashScreenView.swift */; };
 		CB58100E2C081B1A00898F6B /* SayTheWordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58100D2C081B1A00898F6B /* SayTheWordView.swift */; };
 		CB5810102C081BE600898F6B /* SayTheWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB58100F2C081BE600898F6B /* SayTheWordViewModel.swift */; };
@@ -33,6 +34,11 @@
 		CBF6DB9F2C10A002009765DB /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB982C0FFFC1009765DB /* AVFAudio.framework */; };
 		CBF6DBA02C10A002009765DB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB942C0FFF28009765DB /* AVFoundation.framework */; };
 		CBF6DBA12C10A009009765DB /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBF6DB962C0FFF30009765DB /* Speech.framework */; };
+		D957B9582C09692900ED0C6F /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D957B9572C09692900ED0C6F /* Home.swift */; };
+		D957B95B2C09695A00ED0C6F /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF72C0937450065C960 /* CustomButton.swift */; };
+		D97FCAF62C09300A0065C960 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF52C09300A0065C960 /* Home.swift */; };
+		D97FCAF82C0937450065C960 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97FCAF72C0937450065C960 /* CustomButton.swift */; };
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +53,7 @@
 		044B72DD2C0035F200FDF683 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		044B72E02C0035F200FDF683 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LingoQuest_Mac.entitlements; sourceTree = "<group>"; };
+
 		CB58100B2C081AB800898F6B /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		CB58100D2C081B1A00898F6B /* SayTheWordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordView.swift; sourceTree = "<group>"; };
 		CB58100F2C081BE600898F6B /* SayTheWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordViewModel.swift; sourceTree = "<group>"; };
@@ -62,6 +69,10 @@
 		CBF6DB9A2C103B0F009765DB /* SayTheWordViewMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordViewMac.swift; sourceTree = "<group>"; };
 		CBF6DB9D2C103D03009765DB /* SayTheWordViewModelMac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SayTheWordViewModelMac.swift; sourceTree = "<group>"; };
 		CBF6DBA32C10A79F009765DB /* LingoQuest-Mac-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "LingoQuest-Mac-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D957B9572C09692900ED0C6F /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D97FCAF52C09300A0065C960 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		D97FCAF72C0937450065C960 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +122,7 @@
 				044B72C52C0033DE00FDF683 /* LingoQuestApp.swift */,
 				CB58100B2C081AB800898F6B /* SplashScreenView.swift */,
 				044B72C72C0033DE00FDF683 /* ContentView.swift */,
+				D97FCAF32C092FE50065C960 /* Home */,
 				044B72C92C0033E100FDF683 /* Assets.xcassets */,
 				044B72CB2C0033E100FDF683 /* Preview Content */,
 			);
@@ -132,6 +144,7 @@
 				CB5810252C09C58F00898F6B /* SayTheWord */,
 				044B72D92C0035F000FDF683 /* LingoQuest_MacApp.swift */,
 				044B72DB2C0035F000FDF683 /* ContentView.swift */,
+				D957B9562C09691900ED0C6F /* Home */,
 				044B72DD2C0035F200FDF683 /* Assets.xcassets */,
 				044B72E22C0035F200FDF683 /* LingoQuest_Mac.entitlements */,
 				044B72DF2C0035F200FDF683 /* Preview Content */,
@@ -147,6 +160,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+
 		CB5810092C081A2500898F6B /* SayTheWord */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +233,23 @@
 				CBF6DB9D2C103D03009765DB /* SayTheWordViewModelMac.swift */,
 			);
 			path = ViewModel;
+
+		D957B9562C09691900ED0C6F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D957B9572C09692900ED0C6F /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		D97FCAF32C092FE50065C960 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D97FCAF52C09300A0065C960 /* Home.swift */,
+				D97FCAF72C0937450065C960 /* CustomButton.swift */,
+			);
+			path = Home;
+
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,11 +359,16 @@
 				CB5810122C081D3600898F6B /* LevelData.swift in Sources */,
 				CB58100E2C081B1A00898F6B /* SayTheWordView.swift in Sources */,
 				044B72C82C0033DE00FDF683 /* ContentView.swift in Sources */,
+
 				CB5810152C081E4C00898F6B /* LevelsView.swift in Sources */,
 				CB5810202C08423300898F6B /* SpeechRecognizer.swift in Sources */,
 				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
 				CB58100C2C081AB800898F6B /* SplashScreenView.swift in Sources */,
 				CB5810172C081E9800898F6B /* LevelsViewModel.swift in Sources */,
+				D97FCAF62C09300A0065C960 /* Home.swift in Sources */,
+				044B72C62C0033DE00FDF683 /* LingoQuestApp.swift in Sources */,
+				D97FCAF82C0937450065C960 /* CustomButton.swift in Sources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +379,12 @@
 				CBF6DB9B2C103B0F009765DB /* SayTheWordViewMac.swift in Sources */,
 				CB5810282C09C5B900898F6B /* LevelsViewMac.swift in Sources */,
 				044B72DC2C0035F000FDF683 /* ContentView.swift in Sources */,
+
 				CB58102B2C0C6D9900898F6B /* LevelsViewModel.swift in Sources */,
 				CB58102C2C0C6D9900898F6B /* LevelData.swift in Sources */,
+				D957B95B2C09695A00ED0C6F /* CustomButton.swift in Sources */,
+				D957B9582C09692900ED0C6F /* Home.swift in Sources */,
+
 				044B72DA2C0035F000FDF683 /* LingoQuest_MacApp.swift in Sources */,
 				CBF6DB9E2C103D03009765DB /* SayTheWordViewModelMac.swift in Sources */,
 			);
